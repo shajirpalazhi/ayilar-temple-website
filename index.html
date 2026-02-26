@@ -3,180 +3,81 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Ayilar Madathil Sree Bhadra Bhagavathi Temple</title>
-
-<!-- SEO -->
-<meta name="description" content="Official website of Ayilar Madathil Sree Bhadra Bhagavathi Temple, Anchal, Kerala. Get pooja timings, contact details and temple location.">
-<meta name="keywords" content="Bhadra Bhagavathi Temple, Ayilara Temple, Anchal Temple, Kerala Temple, Pooja Timings">
-<meta name="author" content="Ayilar Madathil Temple Trust">
-<meta name="theme-color" content="#8b0000">
-
-<!-- Favicon -->
-<link rel="icon" type="image/png" href="logo.jpeg">
+<meta name="description" content="Ayilar Madathil Sree Bhadra Bhagavathi Temple, Anchal, Kerala. Daily pooja timings, gallery, and contact information.">
 
 <style>
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    margin:0;
-    font-family:'Segoe UI', sans-serif;
-    background:#2b0000;
-    color:white;
-    line-height:1.6;
-}
+/* GLOBAL */
+body { margin:0; font-family:'Segoe UI', sans-serif; background:#2b0000; color:white; line-height:1.6; scroll-behavior: smooth; }
 
 /* NAVIGATION */
-nav{
-    background:#1a0000;
-    padding:15px;
-    text-align:center;
-    position:sticky;
-    top:0;
-    z-index:1000;
-}
-nav a{
-    color:gold;
-    margin:0 15px;
-    text-decoration:none;
-    font-weight:bold;
-}
-nav a:hover{
-    color:white;
-}
+nav { background:#1a0000; padding:10px 15px; text-align:center; position:sticky; top:0; z-index:1000; }
+nav a { color:gold; margin:0 10px; text-decoration:none; font-weight:bold; font-size:16px; }
+nav a:hover { color:white; }
 
 /* HERO */
-.hero{
-    text-align:center;
-    padding:80px 20px;
-    background:linear-gradient(rgba(0,0,0,0.6), rgba(120,0,0,0.85));
-}
-.logo{
-    width:180px;
-    height:180px;
-    border-radius:50%;
-    border:5px solid gold;
-    box-shadow:0 0 20px gold;
-}
-.hero h1{ color:#ffd700; }
-.malayalam{ color:#fff3b0; }
+.hero { text-align:center; padding:60px 20px; background:linear-gradient(rgba(0,0,0,0.6), rgba(120,0,0,0.85)); }
+.logo { width:150px; height:150px; border-radius:50%; border:5px solid gold; box-shadow:0 0 20px gold; }
+.hero h1 { color:#ffd700; margin:15px 0 5px; text-shadow: 1px 1px 3px rgba(0,0,0,0.5); }
+.malayalam { color:#fff3b0; font-size:18px; text-shadow: 1px 1px 2px rgba(0,0,0,0.5); }
+.hero p { margin-top:10px; font-size:16px; }
 
 /* SECTION */
-section{
-    padding:60px 20px;
-    max-width:1000px;
-    margin:auto;
-}
-h2{
-    text-align:center;
-    color:gold;
-    margin-bottom:30px;
-}
+section { padding:50px 20px; max-width:1000px; margin:auto; }
+h2 { text-align:center; color:gold; margin-bottom:30px; text-shadow: 1px 1px 3px rgba(0,0,0,0.5); }
 
 /* ABOUT */
-.about p{
-    text-align:justify;
-    font-size:18px;
-}
+.about p { text-align:justify; font-size:16px; margin-bottom:15px; }
 
 /* POOJA TIMINGS */
-.timings{
-    background:#3d0000;
-    border-radius:15px;
-    padding:30px;
-}
-.timings ul{
-    list-style:none;
-    padding:0;
-    font-size:18px;
-}
-.timings li{
-    padding:10px 0;
-    border-bottom:1px solid rgba(255,215,0,0.3);
-}
+.timings { background:#3d0000; border-radius:15px; padding:20px; }
+.timings ul { list-style:none; padding:0; font-size:16px; }
+.timings li { padding:10px 0; border-bottom:1px solid rgba(255,215,0,0.3); }
 
 /* GALLERY */
-.gallery-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-    gap:20px;
-}
-.gallery-grid img{
-    width:100%;
-    height:150px;
-    object-fit:cover;
-    border-radius:10px;
-    border:3px solid gold;
-    transition:0.4s;
-}
-.gallery-grid img:hover{
-    transform:scale(1.08);
-}
+.gallery-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr)); gap:15px; }
+.gallery-grid img { width:100%; height:150px; object-fit:cover; border-radius:10px; border:3px solid gold; cursor:pointer; transition: transform 0.2s; }
+.gallery-grid img:hover { transform: scale(1.05); }
+
+/* LIGHTBOX */
+#lightbox { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.95); justify-content:center; align-items:center; z-index:10000; }
+#lightbox img { max-width:90%; max-height:90%; border:5px solid gold; border-radius:10px; box-shadow:0 0 20px gold; }
+.lightbox-btn { position:absolute; top:50%; transform:translateY(-50%); font-size:50px; color:white; cursor:pointer; user-select:none; padding:10px; }
+#prev { left:20px; }
+#next { right:20px; }
+#close { top:20px; right:20px; font-size:40px; }
 
 /* CONTACT */
-.contact{
-    background:#3d0000;
-    text-align:center;
-    border-radius:15px;
-    padding:30px;
-}
-iframe{
-    width:100%;
-    height:300px;
-    border-radius:15px;
-    border:0;
-    margin-top:20px;
-}
+.contact { background:#3d0000; text-align:center; border-radius:15px; padding:20px; }
+.contact p { margin:8px 0; }
+
+/* LOCATION */
+iframe { width:100%; height:300px; border-radius:15px; border:0; margin-top:20px; }
 
 /* FOOTER */
-footer{
-    background:#1a0000;
-    text-align:center;
-    padding:25px;
-    font-size:14px;
-    border-top:2px solid gold;
-}
+footer { background:#1a0000; text-align:center; padding:25px; font-size:14px; border-top:2px solid gold; }
 
 /* WHATSAPP FLOAT */
-.whatsapp-float{
-    position:fixed;
-    width:60px;
-    height:60px;
-    bottom:25px;
-    right:25px;
-    background:#25D366;
-    color:white;
-    border-radius:50%;
-    text-align:center;
-    font-size:28px;
-    line-height:60px;
-    box-shadow:0 0 15px #25D366;
-    z-index:999;
-    text-decoration:none;
-    animation:whatsappPulse 2s infinite;
-}
-.whatsapp-float:hover{ transform:scale(1.1); }
+.whatsapp-float { position:fixed; width:60px; height:60px; bottom:25px; right:25px; background:#25D366; color:white; border-radius:50%; text-align:center; font-size:28px; line-height:60px; box-shadow:0 0 15px #25D366; z-index:999; text-decoration:none; animation:whatsappPulse 2s infinite; }
+.whatsapp-float:hover { transform:scale(1.1); }
+@keyframes whatsappPulse { 0%{ box-shadow:0 0 10px #25D366; } 50%{ box-shadow:0 0 25px #25D366; } 100%{ box-shadow:0 0 10px #25D366; } }
 
-@keyframes whatsappPulse{
-    0%{ box-shadow:0 0 10px #25D366; }
-    50%{ box-shadow:0 0 25px #25D366; }
-    100%{ box-shadow:0 0 10px #25D366; }
-}
+/* BACK TO TOP BUTTON */
+#topBtn { display:none; position:fixed; bottom:95px; right:25px; z-index:1000; font-size:18px; border:none; outline:none; background:gold; color:#2b0000; cursor:pointer; padding:12px; border-radius:50%; box-shadow:0 0 10px gold; }
+#topBtn:hover { background:#ffd700; }
 
-/* MOBILE */
+/* RESPONSIVE */
 @media(max-width:600px){
-    nav a{
-        display:block;
-        margin:10px 0;
-    }
+    .hero h1 { font-size:22px; }
+    .hero h3 { font-size:16px; }
+    .logo { width:120px; height:120px; }
+    nav a { margin:0 5px; font-size:14px; }
+    .gallery-grid img { height:120px; }
+    section { padding:30px 15px; }
+    .lightbox-btn { font-size:35px; }
 }
-
 </style>
 </head>
-
 <body>
 
 <nav>
@@ -191,22 +92,14 @@ footer{
     <img src="logo.jpeg" class="logo" alt="Temple Logo">
     <h1>Ayilar Madathil Sree Bhadra Bhagavathi Temple</h1>
     <h3 class="malayalam">അയിലാർ മഠത്തിൽ ശ്രീ ഭദ്ര ഭാഗവതി ക്ഷേത്രം</h3>
-    <p>Anchal, Kerala, India | 📞 +91 9633559256</p>
+    <p>Anchal, Kerala, India. Ph # +91 9633559256</p>
 </header>
 
 <section id="about" class="about">
     <h2>About the Temple</h2>
-    <p>
-    Madathilamma is famously known as the Mother who answers the call of her devotees.
-    Countless pilgrims irrespective of caste, creed and colour reach the shrine.
-    </p>
-    <p>
-    The benevolent look of Goddess unfolds a thousand lotus flowers of real bhakthi in the minds of devotees.
-    Chanting of Her names and mantras destroys ignorance like flames overcoming darkness.
-    </p>
-    <p>
-    Devotees experience divine grace, protection and prosperity through Her blessings.
-    </p>
+    <p>Madathilamma is famously known as the Mother who answers the call of her devotees. Countless pilgrims irrespective of caste, creed and colour reach the shrine.</p>
+    <p>The benevolent look of Goddess unfolds a thousand lotus flowers of real bhakthi in the minds of devotees. Chanting of Her names and mantras destroys the feelings of ignorance and pride like flames overcoming darkness.</p>
+    <p>How many are the wonders we see right in front of the Goddess. Devotees experience divine grace, protection, and prosperity through Her blessings.</p>
 </section>
 
 <section id="timings">
@@ -225,14 +118,22 @@ footer{
 <section id="gallery">
     <h2>Temple Gallery</h2>
     <div class="gallery-grid">
-        <img src="gallery1.jpg" alt="Temple Image 1">
-        <img src="gallery2.jpg" alt="Temple Image 2">
-        <img src="gallery3.jpg" alt="Temple Image 3">
-        <img src="gallery4.jpg" alt="Temple Image 4">
-        <img src="gallery5.jpg" alt="Temple Image 5">
-        <img src="gallery6.jpg" alt="Temple Image 6">
+        <img src="gallery1.jpg" alt="Temple View 1" loading="lazy">
+        <img src="gallery2.jpg" alt="Temple View 2" loading="lazy">
+        <img src="gallery3.jpg" alt="Temple View 3" loading="lazy">
+        <img src="gallery4.jpg" alt="Temple View 4" loading="lazy">
+        <img src="gallery5.jpg" alt="Temple View 5" loading="lazy">
+        <img src="gallery6.jpg" alt="Temple View 6" loading="lazy">
     </div>
 </section>
+
+<!-- Lightbox -->
+<div id="lightbox">
+    <span id="close" class="lightbox-btn">&times;</span>
+    <span id="prev" class="lightbox-btn">&#10094;</span>
+    <img src="" alt="">
+    <span id="next" class="lightbox-btn">&#10095;</span>
+</div>
 
 <section id="contact">
     <h2>Contact Us</h2>
@@ -254,9 +155,65 @@ footer{
     <p>Designed with devotion 🙏</p>
 </footer>
 
+<!-- WhatsApp Float -->
 <a href="https://wa.me/919633559256?text=🙏%20Namaskaram%20I%20would%20like%20to%20know%20about%20Pooja%20Timings"
    class="whatsapp-float"
    target="_blank">💬</a>
+
+<!-- Back to Top -->
+<button id="topBtn" title="Go to top">↑</button>
+
+<script>
+// Back to top button
+let topBtn = document.getElementById("topBtn");
+window.onscroll = function() { scrollFunction(); };
+function scrollFunction() {
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) { topBtn.style.display = "block"; }
+    else { topBtn.style.display = "none"; }
+}
+topBtn.onclick = function() { window.scrollTo({top:0, behavior:'smooth'}); };
+
+// LIGHTBOX FUNCTIONALITY
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = lightbox.querySelector('img');
+const galleryImages = document.querySelectorAll('.gallery-grid img');
+const prevBtn = document.getElementById('prev');
+const nextBtn = document.getElementById('next');
+const closeBtn = document.getElementById('close');
+
+let currentIndex = 0;
+
+function showLightbox(index) {
+    currentIndex = index;
+    lightbox.style.display = 'flex';
+    lightboxImg.src = galleryImages[index].src;
+    lightboxImg.alt = galleryImages[index].alt;
+}
+
+// Click gallery image
+galleryImages.forEach((img, index) => {
+    img.addEventListener('click', () => { showLightbox(index); });
+});
+
+// Close lightbox
+closeBtn.addEventListener('click', () => { lightbox.style.display = 'none'; });
+
+// Previous / Next
+prevBtn.addEventListener('click', (e) => { e.stopPropagation(); currentIndex = (currentIndex-1+galleryImages.length)%galleryImages.length; showLightbox(currentIndex); });
+nextBtn.addEventListener('click', (e) => { e.stopPropagation(); currentIndex = (currentIndex+1)%galleryImages.length; showLightbox(currentIndex); });
+
+// Click outside image closes
+lightbox.addEventListener('click', (e) => { if(e.target===lightbox) lightbox.style.display='none'; });
+
+// Keyboard navigation
+document.addEventListener('keydown', (e) => {
+    if(lightbox.style.display==='flex'){
+        if(e.key==='ArrowRight'){ nextBtn.click(); }
+        if(e.key==='ArrowLeft'){ prevBtn.click(); }
+        if(e.key==='Escape'){ closeBtn.click(); }
+    }
+});
+</script>
 
 </body>
 </html>
