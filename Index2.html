@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ayilar Madathil Sree Bhadra Bhagavathi Temple</title>
+
+<style>
+body{
+    margin:0;
+    font-family:'Segoe UI', sans-serif;
+    background:#2b0000;
+    color:white;
+    line-height:1.6;
+}
+
+/* NAVIGATION */
+nav{
+    background:#1a0000;
+    padding:15px;
+    text-align:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+nav a{
+    color:gold;
+    margin:0 15px;
+    text-decoration:none;
+    font-weight:bold;
+}
+nav a:hover{
+    color:white;
+}
+
+/* HERO */
+.hero{
+    text-align:center;
+    padding:80px 20px;
+    background:linear-gradient(rgba(0,0,0,0.6), rgba(120,0,0,0.85));
+}
+.logo{
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    border:5px solid gold;
+    box-shadow:0 0 20px gold;
+}
+.hero h1{ color:#ffd700; }
+.malayalam{ color:#fff3b0; }
+
+/* SECTION */
+section{
+    padding:60px 20px;
+    max-width:1000px;
+    margin:auto;
+}
+h2{
+    text-align:center;
+    color:gold;
+    margin-bottom:30px;
+}
+
+/* ABOUT */
+.about p{
+    text-align:justify;
+    font-size:18px;
+}
+
+/* POOJA TIMINGS */
+.timings{
+    background:#3d0000;
+    border-radius:15px;
+    padding:30px;
+}
+.timings ul{
+    list-style:none;
+    padding:0;
+    font-size:18px;
+}
+.timings li{
+    padding:10px 0;
+    border-bottom:1px solid rgba(255,215,0,0.3);
+}
+
+/* GALLERY */
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:20px;
+}
+.gallery-grid img{
+    width:100%;
+    height:150px;
+    object-fit:cover;
+    border-radius:10px;
+    border:3px solid gold;
+}
+
+/* CONTACT */
+.contact{
+    background:#3d0000;
+    text-align:center;
+    border-radius:15px;
+    padding:30px;
+}
+iframe{
+    width:100%;
+    height:300px;
+    border-radius:15px;
+    border:0;
+    margin-top:20px;
+}
+
+/* FOOTER */
+footer{
+    background:#1a0000;
+    text-align:center;
+    padding:25px;
+    font-size:14px;
+    border-top:2px solid gold;
+}
+
+/* WHATSAPP FLOAT */
+.whatsapp-float{
+    position:fixed;
+    width:60px;
+    height:60px;
+    bottom:25px;
+    right:25px;
+    background:#25D366;
+    color:white;
+    border-radius:50%;
+    text-align:center;
+    font-size:28px;
+    line-height:60px;
+    box-shadow:0 0 15px #25D366;
+    z-index:999;
+    text-decoration:none;
+    animation:whatsappPulse 2s infinite;
+}
+.whatsapp-float:hover{ transform:scale(1.1); }
+
+@keyframes whatsappPulse{
+    0%{ box-shadow:0 0 10px #25D366; }
+    50%{ box-shadow:0 0 25px #25D366; }
+    100%{ box-shadow:0 0 10px #25D366; }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <a href="#about">About</a>
+    <a href="#timings">Pooja Timings</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+    <a href="#location">Location</a>
+</nav>
+
+<header class="hero">
+    <img src="logo.jpeg" class="logo" alt="Temple Logo">
+    <h1>Ayilar Madathil Sree Bhadra Bhagavathi Temple</h1>
+    <h3 class="malayalam">അയിലാർ മഠത്തിൽ ശ്രീ ഭദ്ര ഭാഗവതി ക്ഷേത്രം</h3>
+    <p>Anchal, Kerala, India. Ph # +91 9633559256</p>
+</header>
+
+<section id="about" class="about">
+    <h2>About the Temple</h2>
+    <p>
+    Madathilamma is famously known as the Mother who answers the call of her devotees.
+    Countless pilgrims irrespective of caste, creed and colour reach the shrine.
+    </p>
+    <p>
+    The benevolent look of Goddess unfolds a thousand lotus flowers of real bhakthi in the minds of devotees.
+    Chanting of Her names and mantras destroys the feelings of ignorance and pride
+    like the flames of fire that overcome the darkness.
+    </p>
+    <p>
+    How many are the wonders that we see right in front of the Goddess.
+    Devotees experience divine grace, protection and prosperity through Her blessings.
+    </p>
+</section>
+
+<section id="timings">
+    <h2>Daily Pooja Timings</h2>
+    <div class="timings">
+        <ul>
+            <li>🕔 5:00 AM – Temple Opens</li>
+            <li>🪔 5:30 AM – Nirmalya Darshanam</li>
+            <li>🙏 6:30 AM – Usha Pooja</li>
+            <li>🔔 6:30 PM – Deeparadhana</li>
+            <li>🛕 8:00 PM – Temple Closes</li>
+        </ul>
+    </div>
+</section>
+
+<section id="gallery">
+    <h2>Temple Gallery</h2>
+    <div class="gallery-grid">
+        <img src="gallery1.jpg">
+        <img src="gallery2.jpg">
+        <img src="gallery3.jpg">
+        <img src="gallery4.jpg">
+        <img src="gallery5.jpg">
+        <img src="gallery6.jpg">
+    </div>
+</section>
+
+<section id="contact">
+    <h2>Contact Us</h2>
+    <div class="contact">
+        <p>📍 Ayilara, Anchal, Kerala</p>
+        <p>📞 +91 9633559256</p>
+        <p>✉️ info@ayilaramadathiltemple.com</p>
+    </div>
+</section>
+
+<section id="location">
+    <h2>Temple Location</h2>
+    <iframe src="https://maps.google.com/maps?q=8.946092304254222,76.96564890035806&z=15&output=embed"></iframe>
+</section>
+
+<footer>
+    <p>© 2026 Ayilar Madathil Sree Bhadra Bhagavathi Temple</p>
+    <p>May Goddess Bhadra Bhagavathi bless all devotees with prosperity, peace and protection.</p>
+    <p>Designed with devotion 🙏</p>
+</footer>
+
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/919633559256?text=🙏%20Namaskaram%20I%20would%20like%20to%20know%20about%20Pooja%20Timings"
+   class="whatsapp-float"
+   target="_blank">💬</a>
+
+</body>
+</html>
