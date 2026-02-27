@@ -4,215 +4,265 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ayilar Madathil Sree Bhadra Bhagavathi Temple</title>
-<meta name="description" content="Ayilar Madathil Sree Bhadra Bhagavathi Temple, Anchal, Kerala. Daily pooja timings, gallery, and contact information.">
-
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;600&display=swap" rel="stylesheet">
 <style>
-/* GLOBAL */
-body { margin:0; font-family:'Segoe UI', sans-serif; background:#2b0000; color:white; line-height:1.6; scroll-behavior: smooth; }
-
-/* NAVIGATION */
-nav { background:#1a0000; padding:10px 15px; text-align:center; position:sticky; top:0; z-index:1000; }
-nav a { color:gold; margin:0 10px; text-decoration:none; font-weight:bold; font-size:16px; }
-nav a:hover { color:white; }
-
-/* HERO */
-.hero { text-align:center; padding:60px 20px; background:linear-gradient(rgba(0,0,0,0.6), rgba(120,0,0,0.85)); }
-.logo { width:150px; height:150px; border-radius:50%; border:5px solid gold; box-shadow:0 0 20px gold; }
-.hero h1 { color:#ffd700; margin:15px 0 5px; text-shadow: 1px 1px 3px rgba(0,0,0,0.5); }
-.malayalam { color:#fff3b0; font-size:18px; text-shadow: 1px 1px 2px rgba(0,0,0,0.5); }
-.hero p { margin-top:10px; font-size:16px; }
-
-/* SECTION */
-section { padding:50px 20px; max-width:1000px; margin:auto; }
-h2 { text-align:center; color:gold; margin-bottom:30px; text-shadow: 1px 1px 3px rgba(0,0,0,0.5); }
-
-/* ABOUT */
-.about p { text-align:justify; font-size:16px; margin-bottom:15px; }
-
-/* POOJA TIMINGS */
-.timings { background:#3d0000; border-radius:15px; padding:20px; }
-.timings ul { list-style:none; padding:0; font-size:16px; }
-.timings li { padding:10px 0; border-bottom:1px solid rgba(255,215,0,0.3); }
-
-/* GALLERY */
-.gallery-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr)); gap:15px; }
-.gallery-grid img { width:100%; height:150px; object-fit:cover; border-radius:10px; border:3px solid gold; cursor:pointer; transition: transform 0.2s; }
-.gallery-grid img:hover { transform: scale(1.05); }
-
-/* LIGHTBOX */
-#lightbox { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.95); justify-content:center; align-items:center; z-index:10000; }
-#lightbox img { max-width:90%; max-height:90%; border:5px solid gold; border-radius:10px; box-shadow:0 0 20px gold; }
-.lightbox-btn { position:absolute; top:50%; transform:translateY(-50%); font-size:50px; color:white; cursor:pointer; user-select:none; padding:10px; }
-#prev { left:20px; }
-#next { right:20px; }
-#close { top:20px; right:20px; font-size:40px; }
-
-/* CONTACT */
-.contact { background:#3d0000; text-align:center; border-radius:15px; padding:20px; }
-.contact p { margin:8px 0; }
-
-/* LOCATION */
-iframe { width:100%; height:300px; border-radius:15px; border:0; margin-top:20px; }
-
-/* FOOTER */
-footer { background:#1a0000; text-align:center; padding:25px; font-size:14px; border-top:2px solid gold; }
-
-/* WHATSAPP FLOAT */
-.whatsapp-float { position:fixed; width:60px; height:60px; bottom:25px; right:25px; background:#25D366; color:white; border-radius:50%; text-align:center; font-size:28px; line-height:60px; box-shadow:0 0 15px #25D366; z-index:999; text-decoration:none; animation:whatsappPulse 2s infinite; }
-.whatsapp-float:hover { transform:scale(1.1); }
-@keyframes whatsappPulse { 0%{ box-shadow:0 0 10px #25D366; } 50%{ box-shadow:0 0 25px #25D366; } 100%{ box-shadow:0 0 10px #25D366; } }
-
-/* BACK TO TOP BUTTON */
-#topBtn { display:none; position:fixed; bottom:95px; right:25px; z-index:1000; font-size:18px; border:none; outline:none; background:gold; color:#2b0000; cursor:pointer; padding:12px; border-radius:50%; box-shadow:0 0 10px gold; }
-#topBtn:hover { background:#ffd700; }
-
-/* RESPONSIVE */
-@media(max-width:600px){
-    .hero h1 { font-size:22px; }
-    .hero h3 { font-size:16px; }
-    .logo { width:120px; height:120px; }
-    nav a { margin:0 5px; font-size:14px; }
-    .gallery-grid img { height:120px; }
-    section { padding:30px 15px; }
-    .lightbox-btn { font-size:35px; }
-}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Noto Sans Malayalam',system-ui,-apple-system,Segoe UI,Roboto;background:#1a0000;color:#fff;line-height:1.6;scroll-behavior:smooth;}
+header{background:#2b0000;padding:15px;text-align:center;position:sticky;top:0;z-index:1000;box-shadow:0 2px 10px rgba(0,0,0,0.6);}
+header h1{color:#ffd700;font-size:22px;line-height:1.4;}
+nav{margin-top:10px;}
+nav a{color:#fff;margin:0 10px;text-decoration:none;font-size:14px;font-weight:500;cursor:pointer;transition:0.3s;}
+nav a:hover{color:#ffd700;}
+.book-btn{background:#ffd700;color:#2b0000 !important;padding:6px 18px;border-radius:30px;transition:0.3s;}
+.book-btn:hover{transform:scale(1.05);}
+.lang-btn{border:1px solid #ffd700;padding:5px 14px;border-radius:20px;cursor:pointer;transition:0.3s;}
+.lang-btn:hover{background:#ffd700;color:#1a0000;}
+.slider{position:relative;height:420px;overflow:hidden;}
+.slide{position:absolute;width:100%;height:100%;opacity:0;transition:opacity 1.2s ease-in-out;}
+.slide img{width:100%;height:100%;object-fit:cover;filter:brightness(60%);}
+.active{opacity:1}
+.hero-text{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;}
+.hero-text h2{color:#ffd700;font-size:36px;text-shadow: 2px 2px 6px rgba(0,0,0,0.7);}
+section{padding:60px 20px;max-width:1000px;margin:auto;text-align:center;}
+section h2{color:#ffd700;margin-bottom:20px;font-size:28px;}
+.card{background:#2b0000;padding:25px;border-radius:12px;margin-top:20px;text-align:left;box-shadow:0 4px 15px rgba(0,0,0,0.4);}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:12px;margin-top:20px;}
+.gallery img{width:100%;height:100px;object-fit:cover;border-radius:10px;cursor:pointer;transition:0.3s;}
+.gallery img:hover{transform:scale(1.05);}
+.map iframe{width:100%;height:320px;border-radius:12px;border:0;}
+.qr img{width:160px;margin-top:15px;background:#fff;padding:8px;border-radius:10px;}
+.popup{display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:#fff;color:#000;padding:25px;border-radius:15px;width:95%;max-width:460px;z-index:2000;box-shadow:0 10px 30px rgba(0,0,0,0.6);}
+.popup h3{text-align:center;margin-bottom:15px;color:#2b0000;}
+.popup input,.popup select{width:100%;padding:10px;margin:8px 0;border-radius:6px;border:1px solid #ccc;}
+.popup button{width:100%;padding:12px;margin-top:10px;background:#ffd700;border:none;border-radius:6px;font-weight:bold;cursor:pointer;transition:0.3s;}
+.popup button:hover{transform:scale(1.03);}
+.close-btn{background:#900;color:#fff;}
+.floating{position:fixed;bottom:20px;right:20px;background:#ffd700;color:#2b0000;padding:14px 22px;border-radius:40px;font-weight:bold;cursor:pointer;box-shadow:0 5px 15px rgba(0,0,0,0.5);transition:0.3s;}
+.floating:hover{transform:scale(1.05);}
+footer{background:#2b0000;padding:20px;text-align:center;margin-top:40px;font-size:14px;line-height:1.5;}
+.lightbox{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.95);justify-content:center;align-items:center;z-index:3000;flex-direction:column;}
+.lightbox img{max-width:90%;max-height:85%;border-radius:10px;transition:0.3s;}
+.lightbox .nav{position:absolute;top:50%;font-size:45px;color:#ffd700;cursor:pointer;padding:15px;user-select:none;}
+.lightbox .prev{left:20px;} .lightbox .next{right:20px;}
+.lightbox .close{position:absolute;top:20px;right:30px;font-size:30px;color:#fff;cursor:pointer;}
+@media(max-width:768px){.slider{height:260px}.hero-text h2{font-size:24px}nav{display:flex;flex-wrap:wrap;justify-content:center}.gallery img{height:80px;}}
 </style>
 </head>
 <body>
 
+<header>
+<h1 id="templeTitle">🛕 Ayilara Madathil Sree Bhadra Bhagavathi Temple<br><span style="font-size:14px;">അയിലറ മഠത്തിൽ ശ്രീ ഭദ്രാ ഭഗവതി ക്ഷേത്രം</span></h1>
 <nav>
-    <a href="#about">About</a>
-    <a href="#timings">Pooja Timings</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#contact">Contact</a>
-    <a href="#location">Location</a>
+<a href="#about" id="navAbout">About</a>
+<a href="#festival" id="navFestival">Festival</a>
+<a href="#gallery" id="navGallery">Gallery</a>
+<a href="#location" id="navLocation">Location</a>
+<a href="#donation" id="navDonate">Donate</a>
+<a class="book-btn" onclick="openBooking()" id="navBook">Pooja Booking</a>
+<a class="lang-btn" onclick="toggleLang()" id="langBtn">മലയാളം</a>
 </nav>
-
-<header class="hero">
-    <img src="logo.jpeg" class="logo" alt="Temple Logo">
-    <h1>Ayilara Madathil Sree Bhadra Bhagavathi Temple</h1>
-    <h3 class="malayalam">അയിലറ മഠത്തിൽ ശ്രീ ഭദ്രാ ഭഗവതി ക്ഷേത്രം</h3>
-    <p>Anchal, Kerala, India. Ph # +91 9633559256</p>
 </header>
 
-<section id="about" class="about">
-    <h2>About the Temple</h2>
-    <p>Madathilamma is famously known as the Mother who answers the call of her devotees. Countless pilgrims irrespective of caste, creed and colour reach the shrine.</p>
-    <p>The benevolent look of Goddess unfolds a thousand lotus flowers of real bhakthi in the minds of devotees. Chanting of Her names and mantras destroys the feelings of ignorance and pride like flames overcoming darkness.</p>
-    <p>How many are the wonders we see right in front of the Goddess. Devotees experience divine grace, protection, and prosperity through Her blessings.</p>
+<div class="slider">
+<div class="slide active"><img src="banner1.jpg" alt="Banner 1"></div>
+<div class="slide"><img src="banner2.jpg" alt="Banner 2"></div>
+<div class="slide"><img src="banner3.jpg" alt="Banner 3"></div>
+<div class="hero-text"><h2 id="heroTitle">Divine Blessings & Devotion</h2></div>
+</div>
+
+<section id="about">
+<h2 id="aboutTitle">About the Temple</h2>
+<div class="card"><p id="aboutText">Madathilamma is famously known as the Mother who answers the call of her devotees. Countless pilgrims irrespective of caste, creed and colour reach the shrine.
+
+The benevolent look of Goddess unfolds a thousand lotus flowers of real bhakthi in the minds of devotees. Chanting of Her names and mantras destroys the feelings of ignorance and pride like flames overcoming darkness.
+
+How many are the wonders we see right in front of the Goddess. Devotees experience divine grace, protection, and prosperity through Her blessings.</p></div>
 </section>
 
-<section id="timings">
-    <h2>Daily Pooja Timings</h2>
-    <div class="timings">
-        <ul>
-            <li>🕔 5:00 AM – Temple Opens</li>
-            <li>🪔 5:30 AM – Nirmalya Darshanam</li>
-            <li>🙏 6:30 AM – Usha Pooja</li>
-            <li>🔔 6:30 PM – Deeparadhana</li>
-            <li>🛕 8:00 PM – Temple Closes</li>
-        </ul>
-    </div>
+<section id="festival">
+<h2 id="festivalTitle">Temple Festival</h2>
+<div class="card" id="festivalText">Annual Utsavam celebrated with poojas, rituals and cultural programs.</div>
 </section>
 
 <section id="gallery">
-    <h2>Temple Gallery</h2>
-    <div class="gallery-grid">
-        <img src="gallery1.jpg" alt="Temple View 1" loading="lazy">
-        <img src="gallery2.jpg" alt="Temple View 2" loading="lazy">
-        <img src="gallery3.jpg" alt="Temple View 3" loading="lazy">
-        <img src="gallery4.jpg" alt="Temple View 4" loading="lazy">
-        <img src="gallery5.jpg" alt="Temple View 5" loading="lazy">
-        <img src="gallery6.jpg" alt="Temple View 6" loading="lazy">
-    </div>
-</section>
+<h2 id="galleryTitle">Gallery</h2>
+<div class="gallery" id="galleryImages">
+<img src="gallery1.jpg" alt="Gallery">
+<img src="gallery2.jpg" alt="Gallery">
+<img src="gallery3.jpg" alt="Gallery">
+<img src="gallery4.jpg" alt="Gallery">
+<img src="gallery5.jpg" alt="Gallery">
+<img src="gallery6.jpg" alt="Gallery">
+<img src="gallery7.jpg" alt="Gallery">
+<img src="gallery8.jpg" alt="Gallery">
 
-<!-- Lightbox -->
-<div id="lightbox">
-    <span id="close" class="lightbox-btn">&times;</span>
-    <span id="prev" class="lightbox-btn">&#10094;</span>
-    <img src="" alt="">
-    <span id="next" class="lightbox-btn">&#10095;</span>
 </div>
-
-<section id="contact">
-    <h2>Contact Us</h2>
-    <div class="contact">
-        <p>📍 Ayilara, Anchal, Kerala</p>
-        <p>📞 +91 9633559256</p>
-        <p>✉️ info@ayilaramadathiltemple.com</p>
-    </div>
 </section>
 
 <section id="location">
-    <h2>Temple Location</h2>
-    <iframe src="https://maps.google.com/maps?q=8.946092304254222,76.96564890035806&z=15&output=embed"></iframe>
+<h2 id="locationTitle">Location</h2>
+<div class="map">
+<iframe src="https://www.google.com/maps?q=Anchal,Kerala&output=embed" loading="lazy"></iframe>
+</div>
 </section>
 
+<section id="donation">
+<h2 id="donationTitle">Bank & UPI Donation</h2>
+<div class="card">
+<p><b>Bank:</b> South Indian Bank</p>
+<p><b>Account Name:</b> Ayilar Madathil Temple</p>
+<p><b>Account No:</b> 000000000000</p>
+<p><b>IFSC:</b> SIBL000000</p>
+<p><b>UPI ID:</b> temple@upi</p>
+<div class="qr"><img src="upi-qr.png" alt="UPI QR"></div>
+<p>📞 +91 9633559256</p>
+<p>✉ info@temple.com</p>
+</div>
+</section>
+
+<!-- Booking Popup -->
+<div class="popup" id="popup">
+<h3 id="popupTitle">Pooja Booking</h3>
+<form onsubmit="processBooking(event)">
+<input type="text" id="name" placeholder="Your Name" required>
+<input type="date" id="date" required>
+<label><input type="checkbox" id="donateOnly" onchange="togglePooja()"> Donate Only</label>
+<div id="poojaSection">
+<select id="pooja">
+<option value="Ganapathi Homam" data-amount="500">Ganapathi Homam - ₹500</option>
+<option value="Bhagavathi Pooja" data-amount="700">Bhagavathi Pooja - ₹700</option>
+<option value="Archana" data-amount="300">Archana - ₹300</option>
+</select>
+<select id="nakshatra">
+<option value="Ashwini">അശ്വിനി / Ashwini</option>
+<option value="Bharani">ഭരണി / Bharani</option>
+<option value="Krittika">കൃതിക / Krittika</option>
+<option value="Rohini">രോഹിണി / Rohini</option>
+<option value="Mrigashira">മൃഗശിര / Mrigashira</option>
+<option value="Ardra">അർദ്ര / Ardra</option>
+<option value="Punarvasu">പുനർവസു / Punarvasu</option>
+<option value="Pushya">പുഷ്യ / Pushya</option>
+<option value="Ashlesha">അശ്ലേഷ / Ashlesha</option>
+<option value="Magha">മഘ / Magha</option>
+<option value="Purva Phalguni">പൂര്വ ഫൾഗുണി / Purva Phalguni</option>
+<option value="Uttara Phalguni">ഉത്തര ഫൾഗുണി / Uttara Phalguni</option>
+<option value="Hasta">ഹസ്ത / Hasta</option>
+<option value="Chitra">ചിത്ര / Chitra</option>
+<option value="Swati">സ്വാതി / Swati</option>
+<option value="Vishakha">വിശാഖ / Vishakha</option>
+<option value="Anuradha">അനുരാധ / Anuradha</option>
+<option value="Jyeshta">ജ്യേഷ്ഠ / Jyeshta</option>
+<option value="Mula">മുല / Mula</option>
+<option value="Purva Ashadha">പൂർവ ആഷാഢ / Purva Ashadha</option>
+<option value="Uttara Ashadha">ഉത്തര ആഷാഢ / Uttara Ashadha</option>
+<option value="Shravana">ശ്രവണ / Shravana</option>
+<option value="Dhanishta">ധനിഷ്ട / Dhanishta</option>
+<option value="Shatabhisha">ശതഭിഷ / Shatabhisha</option>
+<option value="Purva Bhadrapada">പൂര്വ ഭദ്രപദ / Purva Bhadrapada</option>
+<option value="Uttara Bhadrapada">ഉത്തര ഭദ്രപദ / Uttara Bhadrapada</option>
+<option value="Revati">രേവതി / Revati</option>
+</select>
+</div>
+<input type="number" id="donationAmount" placeholder="Enter amount to donate" style="display:none;">
+<p style="font-weight:bold;margin-top:5px;">Total Amount: ₹<span id="totalAmount">500</span></p>
+<button type="submit" id="payBtn">Pay & Confirm</button>
+<button type="button" onclick="closeBooking()" class="close-btn">Close</button>
+</form>
+</div>
+
+<div class="floating" onclick="openBooking()" id="floatBtn">🛕 Book Pooja</div>
+
+<!-- Gallery Lightbox -->
+<div class="lightbox" id="lightbox">
+<span class="nav prev" onclick="prevImage()">&#10094;</span>
+<img id="lightboxImg">
+<span class="nav next" onclick="nextImage()">&#10095;</span>
+<span class="close" onclick="closeLightbox()">&#10006;</span>
+</div>
+
 <footer>
-    <p>© 2026 Ayilar Madathil Sree Bhadra Bhagavathi Temple</p>
-    <p>May Goddess Bhadra Bhagavathi bless all devotees with prosperity, peace and protection.</p>
-    <p> 🙏 “A devotional creation by Shaji R Palazhi.” 🙏</p>
+<p>© 2026 Ayilar Madathil Sree Bhadra Bhagavathi Temple</p>
+<p>May Goddess Bhadra Bhagavathi bless all devotees with prosperity, peace and protection.</p>
+<p>🙏 “A devotional creation by Shaji R Palazhi.” 🙏</p>
 </footer>
 
-<!-- WhatsApp Float -->
-<a href="https://wa.me/919633559256?text=🙏%20Namaskaram%20I%20would%20like%20to%20know%20about%20Pooja%20Timings"
-   class="whatsapp-float"
-   target="_blank">💬</a>
-
-<!-- Back to Top -->
-<button id="topBtn" title="Go to top">↑</button>
-
 <script>
-// Back to top button
-let topBtn = document.getElementById("topBtn");
-window.onscroll = function() { scrollFunction(); };
-function scrollFunction() {
-    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) { topBtn.style.display = "block"; }
-    else { topBtn.style.display = "none"; }
+/* SLIDER */
+let slides=document.querySelectorAll('.slide'); let index=0;
+setInterval(()=>{slides[index].classList.remove('active'); index=(index+1)%slides.length; slides[index].classList.add('active');},3500);
+
+/* Booking */
+function openBooking(){document.getElementById("popup").style.display="block";}
+function closeBooking(){document.getElementById("popup").style.display="none";}
+function togglePooja(){
+let donateOnly=document.getElementById("donateOnly").checked;
+document.getElementById("poojaSection").style.display=donateOnly?"none":"block";
+document.getElementById("donationAmount").style.display=donateOnly?"block":"none";
+updateAmount();
 }
-topBtn.onclick = function() { window.scrollTo({top:0, behavior:'smooth'}); };
-
-// LIGHTBOX FUNCTIONALITY
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = lightbox.querySelector('img');
-const galleryImages = document.querySelectorAll('.gallery-grid img');
-const prevBtn = document.getElementById('prev');
-const nextBtn = document.getElementById('next');
-const closeBtn = document.getElementById('close');
-
-let currentIndex = 0;
-
-function showLightbox(index) {
-    currentIndex = index;
-    lightbox.style.display = 'flex';
-    lightboxImg.src = galleryImages[index].src;
-    lightboxImg.alt = galleryImages[index].alt;
+document.getElementById("pooja").addEventListener("change",updateAmount);
+document.getElementById("donationAmount").addEventListener("input",updateAmount);
+function updateAmount(){
+let donateOnly=document.getElementById("donateOnly").checked;
+let total=0;
+if(donateOnly){
+total=parseInt(document.getElementById("donationAmount").value)||0;
+}else{
+let pooja=document.getElementById("pooja");
+total=parseInt(pooja.options[pooja.selectedIndex].dataset.amount);
+}
+document.getElementById("totalAmount").innerText=total;
+}
+function processBooking(e){
+e.preventDefault();
+let name=document.getElementById("name").value;
+let date=document.getElementById("date").value;
+let total=parseInt(document.getElementById("totalAmount").innerText);
+let pooja=document.getElementById("pooja").value;
+let nakshatra=document.getElementById("nakshatra").value;
+let donateOnly=document.getElementById("donateOnly").checked;
+if(total<=0){alert("Please enter a valid amount");return;}
+let upiID="temple@upi";
+let upiURL=`upi://pay?pa=${upiID}&pn=Ayilar+Madathil+Temple&am=${total}&cu=INR&tn=Pooja Booking`;
+window.location.href=upiURL;
+setTimeout(()=>{
+let msg=`Pooja Booking Confirmation:%0AName: ${name}%0ADate: ${date}%0A${donateOnly?"Donation Only":`Pooja: ${pooja}%0ANakshatra: ${nakshatra}`}%0AAmount: ₹${total}`;
+window.open(`https://wa.me/919633559256?text=${msg}`,"_blank");
+closeBooking();
+},5000);
 }
 
-// Click gallery image
-galleryImages.forEach((img, index) => {
-    img.addEventListener('click', () => { showLightbox(index); });
-});
+/* Language Toggle */
+let mal=false;
+function toggleLang(){
+mal=!mal;
+document.getElementById("langBtn").innerText=mal?"English":"മലയാളം";
+document.getElementById("heroTitle").innerText=mal?"ദിവ്യ അനുഗ്രഹവും ഭക്തിയും":"Divine Blessings & Devotion";
+document.getElementById("navAbout").innerText=mal?"കുറിച്ച്":"About";
+document.getElementById("navFestival").innerText=mal?"ഉത്സവം":"Festival";
+document.getElementById("navGallery").innerText=mal?"ഗാലറി":"Gallery";
+document.getElementById("navLocation").innerText=mal?"സ്ഥലം":"Location";
+document.getElementById("navDonate").innerText=mal?"സംഭാവന":"Donate";
+document.getElementById("navBook").innerText=mal?"പൂജ ബുക്കിംഗ്":"Pooja Booking";
+document.getElementById("aboutTitle").innerText=mal?"ക്ഷേത്രത്തെ കുറിച്ച്":"About the Temple";
+document.getElementById("festivalTitle").innerText=mal?"ക്ഷേത്ര ഉത്സവം":"Temple Festival";
+document.getElementById("galleryTitle").innerText=mal?"ഗാലറി":"Gallery";
+document.getElementById("locationTitle").innerText=mal?"സ്ഥലം":"Location";
+document.getElementById("donationTitle").innerText=mal?"ബാങ്ക് & UPI സംഭാവന":"Bank & UPI Donation";
+document.getElementById("popupTitle").innerText=mal?"പൂജ ബുക്കിംഗ്":"Pooja Booking";
+document.getElementById("aboutText").innerText=mal?"ഭക്തരുടെ വിളിക്ക് ഉത്തരം നൽകുന്ന അമ്മ എന്നാണ് മഠത്തിലമ്മ അറിയപ്പെടുന്നത്. ജാതി, മത, വർണ്ണ വ്യത്യാസമില്ലാതെ തീർത്ഥാടകർ ക്ഷേത്രത്തിലെത്തുന്നു. ദേവിയുടെ ദയാലുവായ നോട്ടം ഭക്തരുടെ മനസ്സിൽ ആയിരം താമരപ്പൂക്കൾ വിരിയിക്കുന്നു. അവളുടെ നാമങ്ങളും മന്ത്രങ്ങളും ഉച്ഛാരണചെയ്താൽ അജ്ഞാനം, അഹങ്കാരം തീർന്നുപോകും. ഭക്തർ ദൈവിക അനുഗ്രഹം, സംരക്ഷണം, സമൃദ്ധി അനുഭവിക്കുന്നു.":"Madathilamma is famously known as the Mother who answers the call of her devotees. Countless pilgrims irrespective of caste, creed and colour reach the shrine. The benevolent look of Goddess unfolds a thousand lotus flowers of real bhakthi in the minds of devotees. Chanting of Her names and mantras destroys the feelings of ignorance and pride like flames overcoming darkness. Devotees experience divine grace, protection, and prosperity through Her blessings.";
+document.getElementById("festivalText").innerText=mal?"വാർഷിക ഉത്സവം പൂജകൾ, ശാസ്ത്രീയ ചടങ്ങുകൾ, സാംസ്കാരിക പരിപാടികളോടെ ആഘോഷിക്കുന്നു.":"Annual Utsavam celebrated with poojas, rituals and cultural programs.";
+}
 
-// Close lightbox
-closeBtn.addEventListener('click', () => { lightbox.style.display = 'none'; });
-
-// Previous / Next
-prevBtn.addEventListener('click', (e) => { e.stopPropagation(); currentIndex = (currentIndex-1+galleryImages.length)%galleryImages.length; showLightbox(currentIndex); });
-nextBtn.addEventListener('click', (e) => { e.stopPropagation(); currentIndex = (currentIndex+1)%galleryImages.length; showLightbox(currentIndex); });
-
-// Click outside image closes
-lightbox.addEventListener('click', (e) => { if(e.target===lightbox) lightbox.style.display='none'; });
-
-// Keyboard navigation
-document.addEventListener('keydown', (e) => {
-    if(lightbox.style.display==='flex'){
-        if(e.key==='ArrowRight'){ nextBtn.click(); }
-        if(e.key==='ArrowLeft'){ prevBtn.click(); }
-        if(e.key==='Escape'){ closeBtn.click(); }
-    }
-});
+/* Gallery Lightbox */
+let galleryImgs=document.querySelectorAll('.gallery img'); 
+let lightbox=document.getElementById("lightbox");
+let lightboxImg=document.getElementById("lightboxImg");
+let currentIndex=0;
+galleryImgs.forEach((img,i)=>{img.addEventListener("click",()=>{currentIndex=i;lightboxImg.src=img.src;lightbox.style.display="flex";});});
+function closeLightbox(){lightbox.style.display="none";}
+function nextImage(){currentIndex=(currentIndex+1)%galleryImgs.length;lightboxImg.src=galleryImgs[currentIndex].src;}
+function prevImage(){currentIndex=(currentIndex-1+galleryImgs.length)%galleryImgs.length;lightboxImg.src=galleryImgs[currentIndex].src;}
 </script>
 
 </body>
