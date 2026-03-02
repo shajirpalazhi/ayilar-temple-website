@@ -79,16 +79,16 @@ section h2{font-size:20px;}
 
 <!-- Slider -->
 <div class="slider">
-<div class="slide active"><img src="banner1.jpg" alt="Banner 1"></div>
-<div class="slide"><img src="banner2.jpg" alt="Banner 2"></div>
-<div class="slide"><img src="banner3.jpg" alt="Banner 3"></div>
+<div class="slide active"><img src="banner1.jpg" alt="Temple Banner 1"></div>
+<div class="slide"><img src="banner2.jpg" alt="Temple Banner 2"></div>
+<div class="slide"><img src="banner3.jpg" alt="Temple Banner 3"></div>
 <div class="hero-text"><h2 id="heroTitle">A divine abode of faith and grace, where devotees seek protection, prosperity, and spiritual peace.</h2></div>
 </div>
 
 <!-- About -->
 <section id="about">
 <h2 id="aboutTitle">About the Temple</h2>
-<div class="card"><p id="aboutText"> "Nestled in peaceful surroundings, Ayilara Madathil Sree Bhadra Bhagavathi Temple is a sacred center dedicated to Sree Bhadra Bhagavathi, the divine Mother of strength, protection, and prosperity. The temple’s serene ambience, traditional Kerala architecture, and timeless rituals offer devotees spiritual solace and blessings. Annual festivals and poojas bring the community together in devotion, making it a place of faith, peace, and divine grace." </p></div>
+<div class="card"><p id="aboutText">Nestled in peaceful surroundings, Ayilara Madathil Sree Bhadra Bhagavathi Temple is a sacred center dedicated to Sree Bhadra Bhagavathi, the divine Mother of strength, protection, and prosperity. The temple’s serene ambience, traditional Kerala architecture, and timeless rituals offer devotees spiritual solace and blessings. Annual festivals and poojas bring the community together in devotion, making it a place of faith, peace, and divine grace.</p></div>
 </section>
 
 <!-- Festival -->
@@ -101,14 +101,14 @@ section h2{font-size:20px;}
 <section id="gallery">
 <h2 id="galleryTitle">Gallery</h2>
 <div class="gallery" id="galleryImages">
-<img src="gallery1.jpg" alt="Gallery">
-<img src="gallery2.jpg" alt="Gallery">
-<img src="gallery3.jpg" alt="Gallery">
-<img src="gallery4.jpg" alt="Gallery">
-<img src="gallery5.jpg" alt="Gallery">
-<img src="gallery6.jpg" alt="Gallery">
-<img src="gallery7.jpg" alt="Gallery">
-<img src="gallery8.jpg" alt="Gallery">
+<img src="gallery1.jpg" alt="Gallery 1">
+<img src="gallery2.jpg" alt="Gallery 2">
+<img src="gallery3.jpg" alt="Gallery 3">
+<img src="gallery4.jpg" alt="Gallery 4">
+<img src="gallery5.jpg" alt="Gallery 5">
+<img src="gallery6.jpg" alt="Gallery 6">
+<img src="gallery7.jpg" alt="Gallery 7">
+<img src="gallery8.jpg" alt="Gallery 8">
 </div>
 </section>
 
@@ -154,28 +154,28 @@ section h2{font-size:20px;}
 <select id="nakshatra">
 <option value="Ashwati">അശ്വതി / Ashwati</option>
 <option value="Bharani">ഭരണി / Bharani</option>
-<option value="Karthika ">കാർത്തിക / Karthika</option>
+<option value="Karthika">കാർത്തിക / Karthika</option>
 <option value="Rohini">രോഹിണി / Rohini</option>
-<option value="Makayiram ">മകയിരം / Makayiram</option>
-<option value="Thiruvathira ">തിരുവാതിര / Thiruvathira</option>
+<option value="Makayiram">മകയിരം / Makayiram</option>
+<option value="Thiruvathira">തിരുവാതിര / Thiruvathira</option>
 <option value="Punartham">പുണർതം / Punartham</option>
-<option value="Pooyam">പൂയം/പൂയ്യം / Pooyam</option>
+<option value="Pooyam">പൂയം / Pooyam</option>
 <option value="Ayilyam">ആയില്യം / Ayilyam</option>
-<option value="Makam">മകം/ Makam</option>
-<option value="Pooram">പൂരം /Pooram</option>
-<option value="Uthram">ഉത്രം /Uthram</option>
+<option value="Makam">മകം / Makam</option>
+<option value="Pooram">പൂരം / Pooram</option>
+<option value="Uthram">ഉത്രം / Uthram</option>
 <option value="Atham">അത്തം / Atham</option>
-<option value="Chithira ">ചിത്തിര / Chithira</option>
+<option value="Chithira">ചിത്തിര / Chithira</option>
 <option value="Chothi">ചോതി / Chothi</option>
 <option value="Vishakham">വിശാഖം / Vishakham</option>
 <option value="Anizham">അനിഴം / Anizham</option>
-<option value="Thrikketta">തൃക്കേട്ട/കേട്ട / Thrikketta</option>
+<option value="Thrikketta">തൃക്കേട്ട / Thrikketta</option>
 <option value="Moolam">മൂലം / Moolam</option>
-<option value="Pooradam">പൂരാടം /Pooradam</option>
-<option value="Uthradam">ഉത്രാടം /Uthradam</option>
+<option value="Pooradam">പൂരാടം / Pooradam</option>
+<option value="Uthradam">ഉത്രാടം / Uthradam</option>
 <option value="Thiruvonam">തിരുവോണം / Thiruvonam</option>
 <option value="Avittam">അവിട്ടം / Avittam</option>
-<option value="Chathayam ">ചതയം / Chathayam</option>
+<option value="Chathayam">ചതയം / Chathayam</option>
 <option value="Pooruruttathi">പൂരുരുട്ടാതി / Pooruruttathi</option>
 <option value="Uthrutathi">ഉത്രട്ടാതി / Uthrutathi</option>
 <option value="Revati">രേവതി / Revati</option>
@@ -210,26 +210,72 @@ section h2{font-size:20px;}
 
 <script>
 /* Slider */
-let slides=document.querySelectorAll('.slide'); let index=0;
-setInterval(()=>{slides[index].classList.remove('active'); index=(index+1)%slides.length; slides[index].classList.add('active');},3500);
+let slides=document.querySelectorAll('.slide'); 
+let index=0;
+function nextSlide(){
+  slides[index].classList.remove('active');
+  index=(index+1)%slides.length;
+  slides[index].classList.add('active');
+}
+let sliderInterval = setInterval(nextSlide, 3500);
+document.querySelector('.slider').addEventListener('mouseenter', ()=>clearInterval(sliderInterval));
+document.querySelector('.slider').addEventListener('mouseleave', ()=>sliderInterval = setInterval(nextSlide, 3500));
 
 /* Booking Functions */
 function openBooking(){document.getElementById("popup").style.display="block";}
 function closeBooking(){document.getElementById("popup").style.display="none";}
 function togglePooja(){
-let donateOnly=document.getElementById("donateOnly").checked;
-document.getElementById("poojaSection").style.display=donateOnly?"none":"block";
-document.getElementById("donationAmount").style.display=donateOnly?"block":"none";
-updateAmount(); updateSummary();
+  let donateOnly=document.getElementById("donateOnly").checked;
+  document.getElementById("poojaSection").style.display=donateOnly?"none":"block";
+  document.getElementById("donationAmount").style.display=donateOnly?"block":"none";
+  updateAmount(); updateSummary();
 }
 document.getElementById("pooja").addEventListener("change",()=>{updateAmount();updateSummary();});
 document.getElementById("donationAmount").addEventListener("input",()=>{updateAmount();updateSummary();});
 document.getElementById("name").addEventListener("input",updateSummary);
 document.getElementById("date").addEventListener("input",updateSummary);
 document.getElementById("nakshatra").addEventListener("change",updateSummary);
-function updateAmount(){let donateOnly=document.getElementById("donateOnly").checked;let total=0;if(donateOnly){total=parseInt(document.getElementById("donationAmount").value)||0;}else{let pooja=document.getElementById("pooja");total=parseInt(pooja.options[pooja.selectedIndex].dataset.amount);}document.getElementById("totalAmount").innerText=total;}
-function updateSummary(){let name=document.getElementById("name").value||"Not Provided";let date=document.getElementById("date").value||"Not Selected";let pooja=document.getElementById("pooja").value;let nakshatra=document.getElementById("nakshatra").value;let donateOnly=document.getElementById("donateOnly").checked;let summary=document.getElementById("summaryText");if(donateOnly){summary.innerText=`Donation Only for ₹${document.getElementById("totalAmount").innerText}`;}else{summary.innerText=`Name: ${name}\nDate: ${date}\nPooja: ${pooja}\nNakshatra: ${nakshatra}\nAmount: ₹${document.getElementById("totalAmount").innerText}`;}}
-function processBooking(e){e.preventDefault();let name=document.getElementById("name").value;let date=document.getElementById("date").value;let total=parseInt(document.getElementById("totalAmount").innerText);let pooja=document.getElementById("pooja").value;let nakshatra=document.getElementById("nakshatra").value;let donateOnly=document.getElementById("donateOnly").checked;if(total<=0){alert("Please enter a valid amount");return;}let upiID="temple@upi";let upiURL=`upi://pay?pa=${upiID}&pn=Ayilar+Madathil+Temple&am=${total}&cu=INR&tn=Pooja Booking`;window.location.href=upiURL;setTimeout(()=>{let msg=`Pooja Booking Confirmation:%0AName: ${name}%0ADate: ${date}%0A${donateOnly?"Donation Only":`Pooja: ${pooja}%0ANakshatra: ${nakshatra}`}%0AAmount: ₹${total}`;window.open(`https://wa.me/919633559256?text=${msg}`,"_blank");closeBooking();},5000);}
+function updateAmount(){
+  let donateOnly=document.getElementById("donateOnly").checked;
+  let total=0;
+  if(donateOnly){total=parseInt(document.getElementById("donationAmount").value)||0;}
+  else{
+    let pooja=document.getElementById("pooja");
+    total=parseInt(pooja.options[pooja.selectedIndex].dataset.amount);
+  }
+  document.getElementById("totalAmount").innerText=total;
+}
+function updateSummary(){
+  let name=document.getElementById("name").value||"Not Provided";
+  let date=document.getElementById("date").value||"Not Selected";
+  let pooja=document.getElementById("pooja").value;
+  let nakshatra=document.getElementById("nakshatra").value;
+  let donateOnly=document.getElementById("donateOnly").checked;
+  let summary=document.getElementById("summaryText");
+  if(donateOnly){
+    summary.innerText=`Donation Only for ₹${document.getElementById("totalAmount").innerText}`;
+  }else{
+    summary.innerText=`Name: ${name}\nDate: ${date}\nPooja: ${pooja}\nNakshatra: ${nakshatra}\nAmount: ₹${document.getElementById("totalAmount").innerText}`;
+  }
+}
+function processBooking(e){
+  e.preventDefault();
+  let name=document.getElementById("name").value;
+  let date=document.getElementById("date").value;
+  let total=parseInt(document.getElementById("totalAmount").innerText);
+  let pooja=document.getElementById("pooja").value;
+  let nakshatra=document.getElementById("nakshatra").value;
+  let donateOnly=document.getElementById("donateOnly").checked;
+  if(total<=0){alert("Please enter a valid amount");return;}
+  let upiID="temple@upi";
+  let upiURL=`upi://pay?pa=${upiID}&pn=Ayilar+Madathil+Temple&am=${total}&cu=INR&tn=Pooja Booking`;
+  window.location.href=upiURL;
+  setTimeout(()=>{
+    let msg=`Pooja Booking Confirmation:%0AName: ${name}%0ADate: ${date}%0A${donateOnly?"Donation Only":`Pooja: ${pooja}%0ANakshatra: ${nakshatra}`}%0AAmount: ₹${total}`;
+    window.open(`https://wa.me/919633559256?text=${msg}`,"_blank");
+    closeBooking();
+  },5000);
+}
 
 /* Lightbox */
 let galleryImgs=document.querySelectorAll('.gallery img'); 
@@ -239,22 +285,48 @@ let currentIndex=0;
 galleryImgs.forEach((img,i)=>{img.addEventListener("click",()=>{currentIndex=i;lightboxImg.src=img.src;lightbox.style.display="flex";});});
 function closeLightbox(){lightbox.style.display="none";}
 function nextImage(){currentIndex=(currentIndex+1)%galleryImgs.length;lightboxImg.src=galleryImgs[currentIndex].src;}
-function prevImage(){currentIndex=(currentIndex-1+galleryImgs.length)%galleryImgs.length;lightboxImg.src=galleryImgs[currentIndex].src;}
+function prevImage(){currentIndex=(currentIndex+galleryImgs.length-1)%galleryImgs.length;lightboxImg.src=galleryImgs[currentIndex].src;}
 
 /* Language Toggle */
 let mal=false;
-function toggleLang(){mal=!mal;
-document.getElementById("langBtn").innerText=mal?"English":"മലയാളം";
-document.getElementById("heroTitle").innerText=mal?"വിശ്വാസത്തിന്റെയും കൃപയുടെയും ഒരു ദിവ്യ വാസസ്ഥലം, അവിടെ ഭക്തർ സംരക്ഷണം, സമൃദ്ധി, ആത്മീയ സമാധാനം എന്നിവ തേടുന്നു":"A divine abode of faith and grace, where devotees seek protection, prosperity, and spiritual peace.";
-document.getElementById("navAbout").innerText=mal?"കുറിച്ച്":"About";
-document.getElementById("navFestival").innerText=mal?"ഉത്സവം":"Festival";
-document.getElementById("navGallery").innerText=mal?"ഗ്യാലറി":"Gallery";
-document.getElementById("navLocation").innerText=mal?"സ്ഥലം":"Location";
-document.getElementById("navDonate").innerText=mal?"ദാനം":"Donate";
-document.getElementById("navBook").innerText=mal?"പൂജ ബുക്കിംഗ്":"Pooja Booking";
-document.getElementById("aboutTitle").innerText=mal?"ക്ഷേത്രത്തെക്കുറിച്ച്":"About the Temple";
-document.getElementById("aboutText").innerText=mal?"ശാന്തമായ ചുറ്റുപാടിൽ സ്ഥിതി ചെയ്യുന്ന ആയിലറ മഠത്തിൽ ശ്രീ ഭദ്ര ഭഗവതി ക്ഷേത്രം, ശക്തിയുടെയും സംരക്ഷണത്തിന്റെയും സമൃദ്ധിയുടെയും ദിവ്യമാതാവായ ശ്രീ ഭദ്ര ഭഗവതിക്ക് സമർപ്പിച്ചിരിക്കുന്ന ഒരു പുണ്യ കേന്ദ്രമാണ്. ക്ഷേത്രത്തിന്റെ ശാന്തമായ അന്തരീക്ഷം, പരമ്പരാഗത കേരള വാസ്തുവിദ്യ, കാലാതീതമായ ആചാരങ്ങൾ എന്നിവ ഭക്തർക്ക് ആത്മീയ ആശ്വാസവും അനുഗ്രഹവും നൽകുന്നു. വാർഷിക ഉത്സവങ്ങളും പൂജകളും സമൂഹത്തെ ഭക്തിയോടെ ഒന്നിപ്പിക്കുന്നു, ഇത് വിശ്വാസത്തിന്റെയും സമാധാനത്തിന്റെയും ദിവ്യകൃപയുടെയും ഒരു സ്ഥലമാക്കി മാറ്റുന്നു.":"Nestled in peaceful surroundings, Ayilara Madathil Sree Bhadra Bhagavathi Temple is a sacred center dedicated to Sree Bhadra Bhagavathi, the divine Mother of strength, protection, and prosperity. The temple’s serene ambience, traditional Kerala architecture, and timeless rituals offer devotees spiritual solace and blessings. Annual festivals and poojas bring the community together in devotion, making it a place of faith, peace, and divine grace.";
+function toggleLang(){
+  mal=!mal;
+
+  document.getElementById("langBtn").innerText=mal?"English":"മലയാളം";
+  document.getElementById("navAbout").innerText=mal?"കുറിച്ച്":"About";
+  document.getElementById("navFestival").innerText=mal?"ഉത്സവം":"Festival";
+  document.getElementById("navGallery").innerText=mal?"ഗ്യാലറി":"Gallery";
+  document.getElementById("navLocation").innerText=mal?"സ്ഥലം":"Location";
+  document.getElementById("navDonate").innerText=mal?"ദാനം":"Donate";
+  document.getElementById("navBook").innerText=mal?"പൂജ ബുക്കിംഗ്":"Pooja Booking";
+
+  document.getElementById("heroTitle").innerText=mal?"വിശ്വാസത്തിന്റെയും കൃപയുടെയും ഒരു ദിവ്യ വാസസ്ഥലം, അവിടെ ഭക്തർ സംരക്ഷണം, സമൃദ്ധി, ആത്മീയ സമാധാനം തേടുന്നു.":"A divine abode of faith and grace, where devotees seek protection, prosperity, and spiritual peace.";
+
+  document.getElementById("aboutTitle").innerText=mal?"ക്ഷേത്രത്തെക്കുറിച്ച്":"About the Temple";
+  document.getElementById("aboutText").innerText=mal?"ശാന്തമായ ചുറ്റുപാടിൽ സ്ഥിതി ചെയ്യുന്ന ആയിലറ മഠത്തിൽ ശ്രീ ഭദ്ര ഭഗവതി ക്ഷേത്രം, ശക്തിയുടെയും സംരക്ഷണത്തിന്റെയും സമൃദ്ധിയുടെയും ദിവ്യമാതാവായ ശ്രീ ഭദ്ര ഭഗവതിക്ക് സമർപ്പിച്ചിരിക്കുന്ന ഒരു പുണ്യ കേന്ദ്രമാണ്. ക്ഷേത്രത്തിന്റെ ശാന്തമായ അന്തരീക്ഷം, പരമ്പരാഗത കേരള വാസ്തുവിദ്യ, കാലാതീതമായ ആചാരങ്ങൾ എന്നിവ ഭക്തർക്ക് ആത്മീയ ആശ്വാസവും അനുഗ്രഹവും നൽകുന്നു. വാർഷിക ഉത്സവങ്ങളും പൂജകളും സമൂഹത്തെ ഭക്തിയോടെ ഒന്നിപ്പിക്കുന്നു, ഇത് വിശ്വാസത്തിന്റെയും സമാധാനത്തിന്റെയും ദിവ്യകൃപയുടെയും ഒരു സ്ഥലമാക്കി മാറ്റുന്നു.":"Nestled in peaceful surroundings, Ayilara Madathil Sree Bhadra Bhagavathi Temple is a sacred center dedicated to Sree Bhadra Bhagavathi, the divine Mother of strength, protection, and prosperity. The temple’s serene ambience, traditional Kerala architecture, and timeless rituals offer devotees spiritual solace and blessings. Annual festivals and poojas bring the community together in devotion, making it a place of faith, peace, and divine grace.";
+
+  document.getElementById("festivalTitle").innerText=mal?"ക്ഷേത്ര ഉത്സവം":"Temple Festival";
+  document.getElementById("festivalText").innerText=mal?"വാർഷിക ഉത്സവം പൂജകൾ, ആചാരങ്ങൾ, സാംസ്‌കാരിക പരിപാടികളോടുകൂടി ആഘോഷിക്കുന്നു.":"Annual Utsavam celebrated with poojas, rituals and cultural programs.";
+
+  document.getElementById("galleryTitle").innerText=mal?"ഗ്യാലറി":"Gallery";
+  document.getElementById("locationTitle").innerText=mal?"സ്ഥലം":"Location";
+  document.getElementById("donationTitle").innerText=mal?"ബാങ്ക് & യു.പൈ.ഐ. ദാനം":"Bank & UPI Donation";
+
+  document.getElementById("popupTitle").innerText=mal?"പൂജ ബുക്കിംഗ്":"Pooja Booking";
+
+  let poojaOptions = [
+    ["Ganapathi Homam - ₹500","ഗണപതി ഹോമം - ₹500"],
+    ["Bhagavathi Pooja - ₹700","ഭഗവതി പൂജ - ₹700"],
+    ["Archana - ₹300","ആർചന - ₹300"]
+  ];
+  let poojaSelect = document.getElementById("pooja");
+  for(let i=0;i<poojaOptions.length;i++){
+    poojaSelect.options[i].text = mal?poojaOptions[i][1]:poojaOptions[i][0];
+  }
+
+  updateSummary();
 }
 </script>
+
 </body>
 </html>
