@@ -249,7 +249,36 @@ document.getElementById("pooja").addEventListener('change',updateSummary);
 document.getElementById("donationAmount").addEventListener('input',updateSummary);
 document.getElementById("name").addEventListener('input',updateSummary);
 document.getElementById("date").addEventListener('input',updateSummary);
-function processBooking(e){e.preventDefault();alert("Thank you! Your booking is confirmed.\n"+document.getElementById("summaryText").innerText); closeBooking();}
+function processBooking(e){
+  e.preventDefault();
+
+  let name=document.getElementById("name").value.trim();
+  let date=document.getElementById("date").value;
+  let total=parseInt(document.getElementById("totalAmount").innerText);
+  let donateOnly=document.getElementById("donateOnly").checked;
+  let pooja=document.getElementById("pooja").value;
+  let upiID="temple@upi"; // 🔁 CHANGE TO YOUR REAL UPI ID
+
+  if(!name){ alert("Please enter your name."); return; }
+  if(!date && !donateOnly){ alert("Please select date."); return; }
+  if(!total || total<=0){ alert("Please enter valid amount."); return; }
+
+  let note = donateOnly
+      ? `Donation by ${name}`
+      : `Pooja: ${pooja} | Name: ${name} | Date: ${date}`;
+
+  let upiURL = `upi://pay?pa=${upiID}&pn=Ayilara%20Madathil%20Temple&am=${total}&cu=INR&tn=${encodeURIComponent(note)}`;
+
+  // Try UPI App Redirect (Mobile)
+  window.location.href = upiURL;
+
+  // Fallback alert after delay (Desktop safety)
+  setTimeout(()=>{
+    alert("If UPI app did not open, please scan the QR code in Donation section.");
+  },2000);
+
+  closeBooking();
+}
 
 // Language toggle
 let englishLang = true;
