@@ -39,7 +39,7 @@ section h2{color:#ffd700;margin-bottom:15px;font-size:22px;}
 .close-btn{background:#900;color:#fff;}
 .floating{position:fixed;bottom:15px;right:15px;background:#ffd700;color:#2b0000;padding:12px 18px;border-radius:35px;font-weight:bold;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,0.5);transition:0.3s;font-size:14px;}
 .floating:hover{transform:scale(1.05);}
-footer{background:#2b0000;padding:18px;text-align:center;margin-top:30px;font-size:13px;line-height:1.4;}
+footer{background:#2b0000;padding:18px;text-align:center;margin-top:30px;font-size:13px;line-height:1.4;position:relative;}
 .lightbox{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.95);justify-content:center;align-items:center;z-index:3000;flex-direction:column;}
 .lightbox img{max-width:90%;max-height:80%;border-radius:10px;transition:0.3s;}
 .lightbox .nav{position:absolute;top:50%;font-size:40px;color:#ffd700;cursor:pointer;padding:12px;user-select:none;}
@@ -49,7 +49,7 @@ footer{background:#2b0000;padding:18px;text-align:center;margin-top:30px;font-si
 .summary-card h4{color:#ffd700;margin-bottom:8px;text-align:center;font-size:14px;}
 .summary-card p{margin:4px 0;color:#fff;font-size:13px;}
 #totalAmount{color:#ffd700;font-weight:bold;font-size:15px;}
-.bhajan-btn{position:fixed;top:20px;right:20px;background:#ffd700;border:none;border-radius:50%;width:50px;height:50px;font-size:24px;cursor:pointer;z-index:1000;}
+.bhajan-btn{position:fixed;bottom:15px;left:15px;background:#ffd700;border:none;border-radius:50%;width:50px;height:50px;font-size:24px;cursor:pointer;z-index:1000;}
 @media(max-width:480px){
 header h1{font-size:18px;}
 .hero-text h2{font-size:20px;}
@@ -145,9 +145,9 @@ section h2{font-size:20px;}
 <p>🙏 “A devotional creation by Shaji R Palazhi.” 🙏</p>
 </footer>
 
-<!-- Bhajan Audio -->
+<!-- Speaker / Bhajan Button -->
 <button class="bhajan-btn" id="bhajanBtn">🔊</button>
-<audio id="bhajanAudio" loop muted>
+<audio id="bhajanAudio" loop>
   <source src="bhajan.mp3" type="audio/mpeg">
 </audio>
 
@@ -252,25 +252,52 @@ document.getElementById("date").addEventListener('input',updateSummary);
 function processBooking(e){e.preventDefault();alert("Thank you! Your booking is confirmed.\n"+document.getElementById("summaryText").innerText); closeBooking();}
 
 // Language toggle
-let english=true;
+let englishLang = true;
 function toggleLang(){
-  english=!english;
-  document.getElementById("templeTitle").innerHTML=english?'🛕 Ayilara Madathil Sree Bhadra Bhagavathi Temple<br><span style="font-size:14px;">അയിലറ മഠത്തിൽ ശ്രീ ഭദ്രാ ഭഗവതി ക്ഷേത്രം</span>':'🛕 അയിലറ മഠത്തിൽ ശ്രീ ഭദ്രാ ഭഗവതി ക്ഷേത്രം<br><span style="font-size:14px;">Ayilara Madathil Sree Bhadra Bhagavathi Temple</span>';
-  document.getElementById("heroTitle").innerText=english?'A divine abode of faith and grace, where devotees seek protection, prosperity, and spiritual peace.':'വിശ്വാസത്തിന്റെയും ദൈവികമായ കൃപയുടെയും അഭയസ്ഥാനം, ഭക്തർ സുരക്ഷ, സമൃദ്ധി, ആത്മീയം പ്രാപിക്കുന്നു.';
-  document.getElementById("aboutTitle").innerText=english?'About the Temple':'ക്ഷേത്രം കുറിച്ച്';
-  document.getElementById("aboutText").innerText=english?'Nestled in peaceful surroundings, Ayilara Madathil Sree Bhadra Bhagavathi Temple is a sacred center dedicated to Sree Bhadra Bhagavathi, the divine Mother of strength, protection, and prosperity. The temple’s serene ambience, traditional Kerala architecture, and timeless rituals offer devotees spiritual solace and blessings. Annual festivals and poojas bring the community together in devotion, making it a place of faith, peace, and divine grace.':'ശാന്തമായ പരിസരങ്ങളിലെ, ആയിലറ മഠത്തിൽ ശ്രീ ഭദ്രാ ഭഗവതി ക്ഷേത്രം ശക്തിയുടെ, സംരക്ഷണത്തിന്റെ, സമൃദ്ധിയുടെ ദൈവമാതാവായ ശ്രീ ഭദ്രാ ഭഗവതിക്ക് സമർപ്പിച്ച ഒരു പുണ്യകേന്ദ്രമാണ്. വർഷാന്ത്യ ഉത്സവങ്ങളും പൂജകളും സമൂഹത്തെ ഭക്തിയിൽ ഒന്നിപ്പിക്കുന്നു.';
-  document.getElementById("festivalTitle").innerText=english?'Temple Festival':'ക്ഷേത്ര ഉത്സവം';
-  document.getElementById("festivalText").innerText=english?'Annual Utsavam celebrated with poojas, rituals and cultural programs.':'വാർഷിക ഉത്സവം പൂജകൾ, ചടങ്ങുകൾ, സാംസ്കാരിക പരിപാടികളോടൊപ്പം ആഘോഷിക്കുന്നു.';
-  document.getElementById("galleryTitle").innerText=english?'Gallery':'ഗാലറി';
-  document.getElementById("locationTitle").innerText=english?'Location':'സ്ഥാനം';
-  document.getElementById("donationTitle").innerText=english?'Bank & UPI Donation':'ബാങ്ക് & UPI ദാനം';
-  document.getElementById("langBtn").innerText=english?'മലയാളം':'English';
-}
+  englishLang = !englishLang;
 
-// Bhajan autoplay
+  // Header & nav
+  document.getElementById("templeTitle").innerHTML = englishLang
+    ? '🛕 Ayilara Madathil Sree Bhadra Bhagavathi Temple<br><span style="font-size:14px;">അയിലറ മഠത്തിൽ ശ്രീ ഭദ്രാ ഭഗവതി ക്ഷേത്രം</span>'
+    : '🛕 അയിലറ മഠത്തിൽ ശ്രീ ഭദ്രാ ഭഗവതി ക്ഷേത്രം<br><span style="font-size:14px;">Ayilara Madathil Sree Bhadra Bhagavathi Temple</span>';
+  document.getElementById("navAbout").innerText = englishLang?"About":"ക്ഷേത്രം";
+  document.getElementById("navFestival").innerText = englishLang?"Festival":"ഉത്സവം";
+  document.getElementById("navGallery").innerText = englishLang?"Gallery":"ഗാലറി";
+  document.getElementById("navLocation").innerText = englishLang?"Location":"സ്ഥാനം";
+  document.getElementById("navDonate").innerText = englishLang?"Donate":"ദാനം";
+  document.getElementById("navBook").innerText = englishLang?"Pooja Booking":"പൂജ ബുക്കിംഗ്";
+  document.getElementById("langBtn").innerText = englishLang?"മലയാളം":"English";
+
+  // Hero
+  document.getElementById("heroTitle").innerText = englishLang
+    ?"A divine abode of faith and grace, where devotees seek protection, prosperity, and spiritual peace."
+    :"വിശ്വാസത്തിന്റെയും ദൈവികമായ കൃപയുടെയും അഭയസ്ഥാനം, ഭക്തർ സുരക്ഷ, സമൃദ്ധി, ആത്മീയം പ്രാപിക്കുന്നു.";
+
+  // About
+  document.getElementById("aboutTitle").innerText = englishLang?"About the Temple":"ക്ഷേത്രം കുറിച്ച്";
+  document.getElementById("aboutText").innerText = englishLang
+    ?"Nestled in peaceful surroundings, Ayilara Madathil Sree Bhadra Bhagavathi Temple is a sacred center dedicated to Sree Bhadra Bhagavathi, the divine Mother of strength, protection, and prosperity. The temple’s serene ambience, traditional Kerala architecture, and timeless rituals offer devotees spiritual solace and blessings. Annual festivals and poojas bring the community together in devotion, making it a place of faith, peace, and divine grace."
+    :"ശാന്തമായ പരിസരങ്ങളിലെ, ആയിലറ മഠത്തിൽ ശ്രീ ഭദ്രാ ഭഗവതി ക്ഷേത്രം ശക്തിയുടെ, സംരക്ഷണത്തിന്റെ, സമൃദ്ധിയുടെ ദൈവമാതാവായ ശ്രീ ഭദ്രാ ഭഗവതിക്ക് സമർപ്പിച്ച ഒരു പുണ്യകേന്ദ്രമാണ്. വർഷാന്ത്യ ഉത്സവങ്ങളും പൂജകളും സമൂഹത്തെ ഭക്തിയിൽ ഒന്നിപ്പിക്കുന്നു.";
+
+  // Festival
+  document.getElementById("festivalTitle").innerText = englishLang?"Temple Festival":"ക്ഷേത്ര ഉത്സവം";
+  document.getElementById("festivalText").innerText = englishLang
+    ?"Annual Utsavam celebrated with poojas, rituals and cultural programs."
+    :"വാർഷിക ഉത്സവം പൂജകൾ, ചടങ്ങുകൾ, സാംസ്കാരിക പരിപാടികളോടൊപ്പം ആഘോഷിക്കുന്നു.";
+
+  // Gallery
+  document.getElementById("galleryTitle").innerText = englishLang?"Gallery":"ഗാലറി";
+
+  // Location
+  document.getElementById("locationTitle").innerText = englishLang?"Location":"സ്ഥാനം";
+
+  // Donation
+  document.getElementById("donationTitle").innerText = englishLang?"Bank & UPI Donation":"ബാങ്ക് & UPI ദാനം";
+};
+
+// Bhajan toggle
 let bhajanAudio=document.getElementById('bhajanAudio');
-window.addEventListener('load',()=>{bhajanAudio.play().catch(()=>{}); setTimeout(()=>{bhajanAudio.muted=false;},500);});
-document.getElementById('bhajanBtn').addEventListener('click',()=>{bhajanAudio.muted=!bhajanAudio.muted;});
+document.getElementById('bhajanBtn').addEventListener('click',()=>{bhajanAudio.paused?bhajanAudio.play():bhajanAudio.pause();});
 </script>
 
 </body>
