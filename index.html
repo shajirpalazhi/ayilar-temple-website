@@ -77,7 +77,7 @@ section h2{font-size:20px;}
 </nav>
 </header>
 
-<div id="chantText" style="text-align:center;color:#ffd700;font-size:18px;margin:10px 0;opacity:0;">ശ്രീ ഭദ്ര ഭഗവതി നമ: / Om Shree Bhadra Bhagavathi Namaha</div>
+<div id="chantText" style="text-align:center;color:#ffd700;font-size:18px;margin:10px 0;opacity:0;">ഓം ശ്രീ ഭദ്ര ഭഗവതി നമ: / Om Shree Bhadra Bhagavathi Namaha</div>
 
 <!-- Slider -->
 <div class="slider">
@@ -111,6 +111,11 @@ section h2{font-size:20px;}
 <img data-src="gallery6.jpg" alt="Gallery 6" class="lazy">
 <img data-src="gallery7.jpg" alt="Gallery 7" class="lazy">
 <img data-src="gallery8.jpg" alt="Gallery 8" class="lazy">
+<img data-src="gallery9.jpg" alt="Gallery 9" class="lazy">
+<img data-src="gallery10.jpg" alt="Gallery 10" class="lazy">
+<img data-src="gallery11.jpg" alt="Gallery 11" class="lazy">
+<img data-src="gallery12.jpg" alt="Gallery 12" class="lazy">
+
 </div>
 </section>
 
@@ -118,10 +123,10 @@ section h2{font-size:20px;}
 <section id="location">
 <h2 id="locationTitle">Location</h2>
 <div class="map">
-<iframe loading="lazy" src="https://www.google.com/maps?q=8.946342,76.96569&z=17&output=embed"></iframe>
+<iframe loading="lazy" src="https://www.google.com/maps?q=8.946059337154056, 76.96567389643423&z=17&output=embed"></iframe>
 </div>
 <br>
-<a href="https://www.google.com/maps/dir/?api=1&destination=8.946342,76.96569" target="_blank" style="background:#ffd700;color:#1a0000;padding:10px 20px;border-radius:30px;text-decoration:none;font-weight:bold;">📍 Get Directions</a>
+<a href="https://www.google.com/maps/dir/?api=1&destination=8.946059337154056, 76.96567389643423" target="_blank" style="background:#ffd700;color:#1a0000;padding:10px 20px;border-radius:30px;text-decoration:none;font-weight:bold;">📍 Get Directions</a>
 </section>
 
 <!-- Donation -->
@@ -303,11 +308,11 @@ function toggleLang(){
   document.getElementById("templeTitle").innerHTML = englishLang
     ? '🛕 Ayilara Madathil Sree Bhadra Bhagavathi Temple<br><span style="font-size:14px;">അയിലറ മഠത്തിൽ ശ്രീ ഭദ്രാ ഭഗവതി ക്ഷേത്രം</span>'
     : '🛕 അയിലറ മഠത്തിൽ ശ്രീ ഭദ്രാ ഭഗവതി ക്ഷേത്രം<br><span style="font-size:14px;">Ayilara Madathil Sree Bhadra Bhagavathi Temple</span>';
-  document.getElementById("navAbout").innerText = englishLang?"About":"ക്ഷേത്രം";
+  document.getElementById("navAbout").innerText = englishLang?"About":"ക്ഷേത്രത്തെക്കുറിച്ച്";
   document.getElementById("navFestival").innerText = englishLang?"Festival":"ഉത്സവം";
   document.getElementById("navGallery").innerText = englishLang?"Gallery":"ഗാലറി";
-  document.getElementById("navLocation").innerText = englishLang?"Location":"സ്ഥാനം";
-  document.getElementById("navDonate").innerText = englishLang?"Donate":"ദാനം";
+  document.getElementById("navLocation").innerText = englishLang?"Location":"സ്ഥലം";
+  document.getElementById("navDonate").innerText = englishLang?"Donate":"സംഭാവന";
   document.getElementById("navBook").innerText = englishLang?"Pooja Booking":"പൂജ ബുക്കിംഗ്";
   document.getElementById("langBtn").innerText = englishLang?"മലയാളം":"English";
 
@@ -317,7 +322,7 @@ function toggleLang(){
     :"വിശ്വാസത്തിന്റെയും ദൈവികമായ കൃപയുടെയും അഭയസ്ഥാനം, ഭക്തർ സുരക്ഷ, സമൃദ്ധി, ആത്മീയം പ്രാപിക്കുന്നു.";
 
   // About
-  document.getElementById("aboutTitle").innerText = englishLang?"About the Temple":"ക്ഷേത്രം കുറിച്ച്";
+  document.getElementById("aboutTitle").innerText = englishLang?"About the Temple":"ക്ഷേത്രത്തെക്കുറിച്ച്";
   document.getElementById("aboutText").innerText = englishLang
     ?"Nestled in peaceful surroundings, Ayilara Madathil Sree Bhadra Bhagavathi Temple is a sacred center dedicated to Sree Bhadra Bhagavathi, the divine Mother of strength, protection, and prosperity. The temple’s serene ambience, traditional Kerala architecture, and timeless rituals offer devotees spiritual solace and blessings. Annual festivals and poojas bring the community together in devotion, making it a place of faith, peace, and divine grace."
     :"ശാന്തമായ പരിസരങ്ങളിലെ, ആയിലറ മഠത്തിൽ ശ്രീ ഭദ്രാ ഭഗവതി ക്ഷേത്രം ശക്തിയുടെ, സംരക്ഷണത്തിന്റെ, സമൃദ്ധിയുടെ ദൈവമാതാവായ ശ്രീ ഭദ്രാ ഭഗവതിക്ക് സമർപ്പിച്ച ഒരു പുണ്യകേന്ദ്രമാണ്. വർഷാന്ത്യ ഉത്സവങ്ങളും പൂജകളും സമൂഹത്തെ ഭക്തിയിൽ ഒന്നിപ്പിക്കുന്നു.";
@@ -332,10 +337,10 @@ function toggleLang(){
   document.getElementById("galleryTitle").innerText = englishLang?"Gallery":"ഗാലറി";
 
   // Location
-  document.getElementById("locationTitle").innerText = englishLang?"Location":"സ്ഥാനം";
+  document.getElementById("locationTitle").innerText = englishLang?"Location":"സ്ഥലം";
 
   // Donation
-  document.getElementById("donationTitle").innerText = englishLang?"Bank & UPI Donation":"ബാങ്ക് & UPI ദാനം";
+  document.getElementById("donationTitle").innerText = englishLang?"Bank & UPI Donation":"ബാങ്ക് & UPI സംഭാവന";
 };
 
 // Bhajan toggle
