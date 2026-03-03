@@ -258,9 +258,9 @@ function processBooking(e){
   let donateOnly=document.getElementById("donateOnly").checked;
   let pooja=document.getElementById("pooja").value;
   let upiID="temple@upi"; // 🔁 CHANGE TO YOUR REAL UPI ID
+  let templePhone="919633559256"; // 🔁 CHANGE TO TEMPLE WHATSAPP NUMBER (with country code, no +)
 
   if(!name){ alert("Please enter your name."); return; }
-  if(!date && !donateOnly){ alert("Please select date."); return; }
   if(!total || total<=0){ alert("Please enter valid amount."); return; }
 
   let note = donateOnly
@@ -269,17 +269,31 @@ function processBooking(e){
 
   let upiURL = `upi://pay?pa=${upiID}&pn=Ayilara%20Madathil%20Temple&am=${total}&cu=INR&tn=${encodeURIComponent(note)}`;
 
-  // Try UPI App Redirect (Mobile)
+  // Open UPI App
   window.location.href = upiURL;
 
-  // Fallback alert after delay (Desktop safety)
-  setTimeout(()=>{
-    alert("If UPI app did not open, please scan the QR code in Donation section.");
-  },2000);
+  // Show Success Screen
+  document.getElementById("successMsg").innerHTML=
+    `Thank you <b>${name}</b> 🙏<br><br>
+     Amount: ₹${total}<br>
+     ${donateOnly?"Donation":"Pooja: "+pooja}<br><br>
+     After completing payment, please send confirmation via WhatsApp.`;
+
+  successPopup.style.display='block';
+
+  // Prepare WhatsApp message
+  let whatsappMessage =
+      `🛕 Ayilara Madathil Temple Booking\n\nName: ${name}\nAmount: ₹${total}\n${donateOnly?"Donation Only":"Pooja: "+pooja+"\nDate: "+date}\n\nPayment done via UPI.`;
+
+  let whatsappURL=`https://wa.me/${templePhone}?text=${encodeURIComponent(whatsappMessage)}`;
+
+  // Attach WhatsApp redirect to button
+  successPopup.querySelector("button").onclick=function(){
+      window.open(whatsappURL,'_blank');
+  };
 
   closeBooking();
 }
-
 // Language toggle
 let englishLang = true;
 function toggleLang(){
