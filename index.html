@@ -187,7 +187,11 @@ let galleryImgs=document.querySelectorAll('.gallery img');
 let lightbox=document.createElement('div'); lightbox.className='lightbox';
 lightbox.innerHTML='<span class="nav prev">&#10094;</span><img><span class="nav next">&#10095;</span><span class="close">&#10006;</span>'; document.body.appendChild(lightbox);
 let lightboxImg=lightbox.querySelector('img'), currentIndex=0;
-galleryImgs.forEach((img,i)=>img.addEventListener('click',()=>{currentIndex=i; lightboxImg.src=img.src; lightbox.style.display='flex';}));
+galleryImgs.forEach((img,i)=>img.addEventListener('click',()=>{
+    currentIndex=i;
+    lightboxImg.src = img.src || img.dataset.src;
+    lightbox.style.display='flex';
+}));
 lightbox.querySelector('.close').onclick=()=>lightbox.style.display='none';
 lightbox.querySelector('.next').onclick=()=>{currentIndex=(currentIndex+1)%galleryImgs.length; lightboxImg.src=galleryImgs[currentIndex].src;};
 lightbox.querySelector('.prev').onclick=()=>{currentIndex=(currentIndex+galleryImgs.length-1)%galleryImgs.length; lightboxImg.src=galleryImgs[currentIndex].src;};
@@ -288,7 +292,7 @@ document.getElementById("bookingForm").addEventListener('submit',function(e){
   let name=document.getElementById("name").value.trim();
   let address=document.getElementById("address").value.trim();
   let date=document.getElementById("date").value;
-  let total=parseInt(document.getElementById("totalAmount").innerText);
+  let total = parseInt(document.getElementById("totalAmount").innerText) || 0;
   let donateOnly=document.getElementById("donateOnly").checked;
   let pooja=document.getElementById("pooja").value;
   let nakshatra=document.getElementById("nakshatra").value;
@@ -302,8 +306,10 @@ document.getElementById("bookingForm").addEventListener('submit',function(e){
       : `Pooja: ${pooja} | Nakshatra: ${nakshatra} | Name: ${name} | Date: ${date}`;
 
   // UPI link
-  let upiURL=`upi://pay?pa=${upiID}&pn=Ayilara%20Madathil%20Temple&am=${total}&cu=INR&tn=${encodeURIComponent(note)}`;
-  window.location.href=upiURL;
+let upiURL = `upi://pay?pa=${upiID}&pn=Ayilara%20Madathil%20Temple&am=${total}&cu=INR&tn=${encodeURIComponent(note)}`;
+
+// Direct redirect (no timeout)
+window.location.href = upiURL;
 
   // Show Thank You popup
   successPopup.querySelector("#successMsg").innerHTML=
@@ -362,7 +368,6 @@ function toggleLang(){
 }
 
 // Initialize
-toggleLang();
 updateSummary();
 </script>
 
