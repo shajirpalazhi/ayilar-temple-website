@@ -115,7 +115,6 @@ section h2{font-size:20px;}
 <img data-src="gallery10.jpg" alt="Gallery 10" class="lazy">
 <img data-src="gallery11.jpg" alt="Gallery 11" class="lazy">
 <img data-src="gallery12.jpg" alt="Gallery 12" class="lazy">
-
 </div>
 </section>
 
@@ -126,7 +125,7 @@ section h2{font-size:20px;}
 <iframe loading="lazy" src="https://www.google.com/maps?q=8.946059337154056, 76.96567389643423&z=17&output=embed"></iframe>
 </div>
 <br>
-<a href="https://www.google.com/maps/dir/?api=1&destination=8.946059337154056, 76.96567389643423" target="_blank" style="background:#ffd700;color:#1a0000;padding:10px 20px;border-radius:30px;text-decoration:none;font-weight:bold;">📍 Get Directions</a>
+<a href="https://www.google.com/maps/dir/?api=1&destination=8.946059337154056,76.96567389643423" target="_blank" style="background:#ffd700;color:#1a0000;padding:10px 20px;border-radius:30px;text-decoration:none;font-weight:bold;">📍 Get Directions</a>
 </section>
 
 <!-- Donation -->
@@ -157,7 +156,7 @@ section h2{font-size:20px;}
 </audio>
 
 <script>
-// Lazy load
+// ===== Lazy Load =====
 document.addEventListener("DOMContentLoaded", function(){
   let lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
   if("IntersectionObserver" in window){
@@ -175,14 +174,14 @@ document.addEventListener("DOMContentLoaded", function(){
   setTimeout(()=>document.getElementById("chantText").style.opacity=1,1000);
 });
 
-// Slider
+// ===== Slider =====
 let slides=document.querySelectorAll('.slide'), index=0;
 function nextSlide(){slides[index].classList.remove('active'); index=(index+1)%slides.length; slides[index].classList.add('active');}
 let sliderInterval=setInterval(nextSlide,3500);
 document.querySelector('.slider').addEventListener('mouseenter',()=>clearInterval(sliderInterval));
 document.querySelector('.slider').addEventListener('mouseleave',()=>sliderInterval=setInterval(nextSlide,3500));
 
-// Lightbox
+// ===== Lightbox =====
 let galleryImgs=document.querySelectorAll('.gallery img');
 let lightbox=document.createElement('div'); lightbox.className='lightbox';
 lightbox.innerHTML='<span class="nav prev">&#10094;</span><img><span class="nav next">&#10095;</span><span class="close">&#10006;</span>'; document.body.appendChild(lightbox);
@@ -192,11 +191,16 @@ lightbox.querySelector('.close').onclick=()=>lightbox.style.display='none';
 lightbox.querySelector('.next').onclick=()=>{currentIndex=(currentIndex+1)%galleryImgs.length; lightboxImg.src=galleryImgs[currentIndex].src;};
 lightbox.querySelector('.prev').onclick=()=>{currentIndex=(currentIndex+galleryImgs.length-1)%galleryImgs.length; lightboxImg.src=galleryImgs[currentIndex].src;};
 
-// Booking popup
+// ===== Bhajan =====
+let bhajanAudio=document.getElementById('bhajanAudio');
+document.getElementById('bhajanBtn').addEventListener('click',()=>{bhajanAudio.paused?bhajanAudio.play():bhajanAudio.pause();});
+
+// ===== Booking Popup =====
 let popup=document.createElement('div'); popup.className='popup';
 popup.innerHTML=`<h3 id="popupTitle">Pooja Booking</h3>
-<form onsubmit="processBooking(event)">
+<form id="bookingForm">
 <input type="text" id="name" placeholder="Your Name" required>
+<input type="text" id="address" placeholder="Address (for donation)" required>
 <input type="date" id="date" required>
 <label><input type="checkbox" id="donateOnly" onchange="togglePooja()"> Donate Only</label>
 <div id="poojaSection">
@@ -239,72 +243,99 @@ popup.innerHTML=`<h3 id="popupTitle">Pooja Booking</h3>
 <div class="summary-card">
 <h4>Booking Summary</h4>
 <p id="summaryText">Please fill the form to see booking details</p>
-<p>Total Amount: ₹<span id="totalAmount">500</span></p>
+<p>Total Amount: ₹<span id="totalAmount">0</span></p>
 </div>
 <button type="submit" id="payBtn">Pay & Confirm</button>
 <button type="button" onclick="closeBooking()" class="close-btn">Close</button>
 </form>`;
 document.body.appendChild(popup);
+
 let floatBtn=document.createElement('div'); floatBtn.className='floating'; floatBtn.innerText='🛕 Book Pooja'; floatBtn.onclick=openBooking; document.body.appendChild(floatBtn);
-function openBooking(){popup.style.display='block';updateSummary();}
+
+function openBooking(){popup.style.display='block'; togglePooja(); updateSummary();}
 function closeBooking(){popup.style.display='none';}
-function togglePooja(){document.getElementById("poojaSection").style.display=document.getElementById("donateOnly").checked?"none":"block"; document.getElementById("donationAmount").style.display=document.getElementById("donateOnly").checked?"block":"none"; updateSummary();}
-function updateSummary(){let pooja=document.getElementById("pooja"); let poojaAmt=parseInt(pooja?pooja.selectedOptions[0].dataset.amount:0)||0; let donation=parseInt(document.getElementById("donationAmount").value||0); let name=document.getElementById("name").value||"Not Provided"; let date=document.getElementById("date").value||"Not Selected"; let donateOnly=document.getElementById("donateOnly").checked; document.getElementById("totalAmount").innerText=donateOnly?donation:poojaAmt+donation; document.getElementById("summaryText").innerText=donateOnly?`Donation Only: ₹${donation}`:`Name: ${name}\nDate: ${date}\nPooja: ${pooja.value}\nAmount: ₹${poojaAmt+donation}`;}
+
+function togglePooja(){
+  let donate=document.getElementById("donateOnly").checked;
+  document.getElementById("poojaSection").style.display=donate?"none":"block";
+  document.getElementById("donationAmount").style.display=donate?"block":"none";
+  updateSummary();
+}
+
+// ===== Summary Update =====
+function updateSummary(){
+  let pooja=document.getElementById("pooja");
+  let poojaAmt=parseInt(pooja?pooja.selectedOptions[0].dataset.amount:0)||0;
+  let donation=parseInt(document.getElementById("donationAmount").value||0);
+  let name=document.getElementById("name").value||"Not Provided";
+  let date=document.getElementById("date").value||"Not Selected";
+  let donateOnly=document.getElementById("donateOnly").checked;
+  document.getElementById("totalAmount").innerText=donateOnly?donation:poojaAmt+donation;
+  document.getElementById("summaryText").innerHTML=
+      donateOnly
+      ? `Donation Only: ₹${donation}`
+      : `Name: ${name}<br>Date: ${date}<br>Pooja: ${pooja.value}<br>Amount: ₹${poojaAmt+donation}`;
+}
 document.getElementById("pooja").addEventListener('change',updateSummary);
 document.getElementById("donationAmount").addEventListener('input',updateSummary);
 document.getElementById("name").addEventListener('input',updateSummary);
 document.getElementById("date").addEventListener('input',updateSummary);
-function processBooking(e){
-  e.preventDefault();
 
+// ===== Process Booking =====
+document.getElementById("bookingForm").addEventListener('submit',function(e){
+  e.preventDefault();
   let name=document.getElementById("name").value.trim();
+  let address=document.getElementById("address").value.trim();
   let date=document.getElementById("date").value;
   let total=parseInt(document.getElementById("totalAmount").innerText);
   let donateOnly=document.getElementById("donateOnly").checked;
   let pooja=document.getElementById("pooja").value;
-  let upiID="temple@upi"; // 🔁 CHANGE TO YOUR REAL UPI ID
-  let templePhone="919633559256"; // 🔁 CHANGE TO TEMPLE WHATSAPP NUMBER (with country code, no +)
+  let nakshatra=document.getElementById("nakshatra").value;
+  let upiID="temple@upi"; 
+  let templePhone="919633559256"; 
 
-  if(!name){ alert("Please enter your name."); return; }
-  if(!total || total<=0){ alert("Please enter valid amount."); return; }
+  if(!name || (!donateOnly && !pooja) || total<=0){ alert("Please complete all details."); return; }
 
-  let note = donateOnly
-      ? `Donation by ${name}`
-      : `Pooja: ${pooja} | Name: ${name} | Date: ${date}`;
+  let note=donateOnly
+      ? `Donation by ${name}, Address: ${address}`
+      : `Pooja: ${pooja} | Nakshatra: ${nakshatra} | Name: ${name} | Date: ${date}`;
 
-  let upiURL = `upi://pay?pa=${upiID}&pn=Ayilara%20Madathil%20Temple&am=${total}&cu=INR&tn=${encodeURIComponent(note)}`;
+  // UPI link
+  let upiURL=`upi://pay?pa=${upiID}&pn=Ayilara%20Madathil%20Temple&am=${total}&cu=INR&tn=${encodeURIComponent(note)}`;
+  window.location.href=upiURL;
 
-  // Open UPI App
-  window.location.href = upiURL;
-
-  // Show Success Screen
-  document.getElementById("successMsg").innerHTML=
+  // Show Thank You popup
+  successPopup.querySelector("#successMsg").innerHTML=
     `Thank you <b>${name}</b> 🙏<br><br>
      Amount: ₹${total}<br>
-     ${donateOnly?"Donation":"Pooja: "+pooja}<br><br>
+     ${donateOnly?"Donation":"Pooja: "+pooja+" | Nakshatra: "+nakshatra}<br><br>
      After completing payment, please send confirmation via WhatsApp.`;
 
   successPopup.style.display='block';
 
-  // Prepare WhatsApp message
-  let whatsappMessage =
-      `🛕 Ayilara Madathil Temple Booking\n\nName: ${name}\nAmount: ₹${total}\n${donateOnly?"Donation Only":"Pooja: "+pooja+"\nDate: "+date}\n\nPayment done via UPI.`;
+  let whatsappMessage=
+    `🛕 Ayilara Madathil Temple Booking\n\nName: ${name}\nAddress: ${address}\nAmount: ₹${total}\n${donateOnly?"Donation Only":"Pooja: "+pooja+"\nNakshatra: "+nakshatra+"\nDate: "+date}\n\nPayment done via UPI.`;
 
   let whatsappURL=`https://wa.me/${templePhone}?text=${encodeURIComponent(whatsappMessage)}`;
 
-  // Attach WhatsApp redirect to button
-  successPopup.querySelector("button").onclick=function(){
-      window.open(whatsappURL,'_blank');
-  };
+  successPopup.querySelector("button").onclick=function(){ window.open(whatsappURL,'_blank'); };
 
   closeBooking();
-}
-// Language toggle
-let englishLang = true;
-function toggleLang(){
-  englishLang = !englishLang;
 
-  // Header & nav
+  // Auto-close popup after 10s
+  setTimeout(()=>successPopup.style.display='none',10000);
+});
+
+// ===== Success Popup =====
+let successPopup = document.createElement('div');
+successPopup.className='popup'; successPopup.style.display='none';
+successPopup.innerHTML=`<h3>Booking Successful 🙏</h3><div id="successMsg" style="text-align:center;margin-bottom:15px;"></div><button>Send WhatsApp Confirmation</button><button type="button" onclick="successPopup.style.display='none'" class="close-btn">Close</button>`;
+document.body.appendChild(successPopup);
+
+// ===== Language Toggle =====
+let englishLang=true;
+function toggleLang(){
+  englishLang=!englishLang;
   document.getElementById("templeTitle").innerHTML = englishLang
     ? '🛕 Ayilara Madathil Sree Bhadra Bhagavathi Temple<br><span style="font-size:14px;">അയിലറ മഠത്തിൽ ശ്രീ ഭദ്രാ ഭഗവതി ക്ഷേത്രം</span>'
     : '🛕 അയിലറ മഠത്തിൽ ശ്രീ ഭദ്രാ ഭഗവതി ക്ഷേത്രം<br><span style="font-size:14px;">Ayilara Madathil Sree Bhadra Bhagavathi Temple</span>';
@@ -315,37 +346,23 @@ function toggleLang(){
   document.getElementById("navDonate").innerText = englishLang?"Donate":"സംഭാവന";
   document.getElementById("navBook").innerText = englishLang?"Pooja Booking":"പൂജ ബുക്കിംഗ്";
   document.getElementById("langBtn").innerText = englishLang?"മലയാളം":"English";
-
-  // Hero
   document.getElementById("heroTitle").innerText = englishLang
     ?"A divine abode of faith and grace, where devotees seek protection, prosperity, and spiritual peace."
     :"വിശ്വാസത്തിന്റെയും ദൈവികമായ കൃപയുടെയും അഭയസ്ഥാനം, ഭക്തർ സുരക്ഷ, സമൃദ്ധി, ആത്മീയം പ്രാപിക്കുന്നു.";
-
-  // About
   document.getElementById("aboutTitle").innerText = englishLang?"About the Temple":"ക്ഷേത്രത്തെക്കുറിച്ച്";
   document.getElementById("aboutText").innerText = englishLang
     ?"Nestled in peaceful surroundings, Ayilara Madathil Sree Bhadra Bhagavathi Temple is a sacred center dedicated to Sree Bhadra Bhagavathi, the divine Mother of strength, protection, and prosperity. The temple’s serene ambience, traditional Kerala architecture, and timeless rituals offer devotees spiritual solace and blessings. Annual festivals and poojas bring the community together in devotion, making it a place of faith, peace, and divine grace."
     :"ശാന്തമായ പരിസരങ്ങളിലെ, ആയിലറ മഠത്തിൽ ശ്രീ ഭദ്രാ ഭഗവതി ക്ഷേത്രം ശക്തിയുടെ, സംരക്ഷണത്തിന്റെ, സമൃദ്ധിയുടെ ദൈവമാതാവായ ശ്രീ ഭദ്രാ ഭഗവതിക്ക് സമർപ്പിച്ച ഒരു പുണ്യകേന്ദ്രമാണ്. വർഷാന്ത്യ ഉത്സവങ്ങളും പൂജകളും സമൂഹത്തെ ഭക്തിയിൽ ഒന്നിപ്പിക്കുന്നു.";
-
-  // Festival
   document.getElementById("festivalTitle").innerText = englishLang?"Temple Festival":"ക്ഷേത്ര ഉത്സവം";
-  document.getElementById("festivalText").innerText = englishLang
-    ?"Annual Utsavam celebrated with poojas, rituals and cultural programs."
-    :"വാർഷിക ഉത്സവം പൂജകൾ, ചടങ്ങുകൾ, സാംസ്കാരിക പരിപാടികളോടൊപ്പം ആഘോഷിക്കുന്നു.";
-
-  // Gallery
+  document.getElementById("festivalText").innerText = englishLang?"Annual Utsavam celebrated with poojas, rituals and cultural programs.":"വാർഷിക ഉത്സവം പൂജകൾ, ചടങ്ങുകൾ, സാംസ്കാരിക പരിപാടികളോടൊപ്പം ആഘോഷിക്കുന്നു.";
   document.getElementById("galleryTitle").innerText = englishLang?"Gallery":"ഗാലറി";
-
-  // Location
   document.getElementById("locationTitle").innerText = englishLang?"Location":"സ്ഥലം";
-
-  // Donation
   document.getElementById("donationTitle").innerText = englishLang?"Bank & UPI Donation":"ബാങ്ക് & UPI സംഭാവന";
-};
+}
 
-// Bhajan toggle
-let bhajanAudio=document.getElementById('bhajanAudio');
-document.getElementById('bhajanBtn').addEventListener('click',()=>{bhajanAudio.paused?bhajanAudio.play():bhajanAudio.pause();});
+// Initialize
+toggleLang();
+updateSummary();
 </script>
 
 </body>
